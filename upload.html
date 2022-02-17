@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="images/favicon.jpg" type="image/x-icon">
+<title>IU University of Applied Sciences</title>
+<!--[if IE]>
+    <script src="js/html5.js"></script><![endif]-->
+<!--main css -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<!--font css -->
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+<!--responsive css  -->
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="sitelogo"><a href="index.html"><img src="images/iu.jpeg" alt="iubh" title="iubh"></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h1>Data summary and file upload</h1>
+                <p>Please check your data below and issue your contract by clicking on the submit button below</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="thankyou-content whitebg">
+    <div class="container">
+        <form action="contract.html" method="GET" enctype="multipart/form-data">
+            <div class="row">
+
+                <div class="col-md-10 col-sm-12 col-xs-12">
+                    <h2>Your summary</h2>
+                  <!--  <p>In nature, dead trees are just as normal as live trees. Let's put some happy trees and bushes back in here. When you buy that first tube of paint it gives you an artist license.</p>
+                    <p>These trees are so much fun. I get started on them and I have a hard time stopping. We don't really know where this goes - and I'm not sure we really care. We'll put a happy little bush here. See how easy it is to create a little tree right in your world. We don't make mistakes we just have happy little accidents.</p>
+                --></div>
+            </div>
+            <div class="row uploadthree">
+              <div class="col-md-3 col-sm-4 col-xs-12 upload-border">
+                <div class="upload-box">
+                  <h4>Study informations</h4>
+                  <p>Degree: <span id="degree">Master</span><br>
+                    Study Program: <span id="showStudy">MBA Study</span><br>
+                    Location: <span id="showFormat">On Campus</span><br>
+                    Time model: <span id="showTimeModel">Part time</span><br>
+                    Start Date: <span id="showStartDate">2nd of May</span><br>
+                      Final price: <span id="finalPrice">000</span> €</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-12 upload-border">
+                <div class="upload-box">
+                  <h4>Personal information</h4>
+                  <p>First Name: <span id="showFirstName">lorem ispum dolor</span><br>Last Name: <span id="showSurName">lorem ispum</span><br>Gender: <span id="gender">lorem ispum</span><br>
+                    Email: <span id="showEmail">lorem ispum dolor</span><br>
+                    Phone: <span id="showPhone">lorem ispum dolor</span><br>
+                    Date of birth: <span id="showDateOfBirth">1.2.33</span><br>
+                    Street: <span id="showStreet">lorem ispum dolor</span><br>
+                    Number: <span id="ShowStreetNo">12</span><br>
+                    Postcode: <span id="showZip">123456</span><br>
+                    City: <span id="showCity">lorem ispum</span><br>
+                    Country: <span id="showCountry">lorem ispum dolor</span></p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-4 col-xs-12">
+                <div class="upload-box">
+                  <h4>Eligibility</h4>
+                  <p>English Level: <span id="showEnglishLevel"></span><br>
+                  Budget: <span id="showBudget"></span><br>
+                  Work Experience: <span id="showWorkExperience"></span> </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-sm-12 col-xs-12">
+                    <h2>Document upload</h2>
+                    <p>Please upload following documents: <br>
+                        High School or University Degree. If you have not received the final diploma please send the most recent transcript.
+                        <br> You can also upload a proof of English language proficiency, Copy of Passport or Curriculum Vitae
+                    </p>
+                    <p>File format: jpg, jpeg, png, pdf, doc, docx - max. 14MB per file</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="fileupload">
+                      <input type="file" name="" value="" multiple>
+                      <div class="fileupload-caption">
+                        <img src="images/upload-file.jpg" id="fileupload" name="files[]" multiple alt="Upload">
+                      </div>
+                    </div>
+
+                    <label class="accept"><input type="checkbox" name="" value=""> accept terms and conditions</label>
+                    <input type="submit" id="submit" name="" value="Submit and Get Contract">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+<!--JS-->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--Fonts js -->
+<script src="js/awesomefonts.js"></script>
+<script src="upload.js"></script>
+<script src="success.js"></script>
+<script>
+    //console.log(localStorage.getItem("Key"));
+    //let t = json.parse(localStorage.getItem("Keys"));
+    //console.log(t);
+    // Retrieve the object from storage
+
+
+
+    //to get the variables from the URL
+    /*var url_string = window.location.href; //window.location.href
+    var url = new URL(url_string);
+    var c = url.searchParams.get("c");
+    console.log(c);*/
+
+    //Shared By Mirko
+    async function uploadFile() {
+        let formData = new FormData();
+        formData.append("file", fileupload.files[0]);
+        await fetch('/upload.php', {
+            method: "POST",
+            body: formData
+        });
+        alert('The file has been uploaded successfully.');
+    }
+
+    /*async function saveFile(inp)
+    {
+        let formData = new FormData();
+        formData.append("file", inp.files[0]);
+        await fetch('/upload.php', {method: "POST", body: formData});
+        alert('success');
+    }*/
+
+
+
+
+</script>
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</body>
+</html>
+

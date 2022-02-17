@@ -1,0 +1,45 @@
+@media only screen and (min-width:768px) and (max-width:991px) {
+img{max-width:100%; height:auto;}
+
+
+}
+
+@media only screen and (min-width:320px) and (max-width:767px){
+img{max-width:100%; height:auto;}
+.desktop{display:none;}
+.mobile{display:block;}
+.herobanner h1{font-size:26px; line-height:30px; padding: 8px 12px;}
+.content-section{padding:27px 0px;}
+.application-process{padding-bottom:10px;}
+.upload-section h2.upload-title{font-size:21px; line-height:35px; margin-bottom:14px; padding:5px 14px;}
+.upload-process ul li.upprocess::before{width:55%;}
+.upload-box input[type="submit"]{line-height:44px; margin-top:5px;}
+.steps-right p{margin-bottom:30px;}
+.useslink{margin-bottom:30px;}
+.footer-bottom{padding:20px 0px 0px; margin-top:10px;}
+.fmenu ul li{padding:0px; display:block; margin-bottom:12px; font-size:14px;}
+.copyright p{font-size:14px;}
+.footer-social{text-align:left;}
+.footer-social ul li{margin:0 25px 0 0;}
+.footer-social ul li a{font-size:20px; line-height:20px;}
+
+.preview01{width:55% !important; margin-right:10px;}
+.preview02{width:10% !important;}
+div.table .file-row > div p{font-size:14px; line-height:14px;}
+#actions .btn{line-height:44px;}
+.application-process p{margin-bottom:20px;}
+.upload-block label{padding:15px 5px; font-weight:400;}
+.shareab-title h2{font-size:20px; line-height:24px;}
+.faqblock h3{font-size:18px; line-height:22px; padding-right:60px;}
+.faqblock{padding:12px 0px;}
+.form-group{margin-bottom:10px;}
+.shareab-form input[type="submit"]{height:45px; border:2px solid #3772FF; font-size:15px;}
+.faqblock h3 span.bluebg{padding:7px 10px;}
+.file-name{font-size:14px; padding:0 10px;}
+.file-size{font-size:14px; padding:10px 10px 0; display:block;}
+.preview.progress-bg .progress-bar .success{font-size:14px; padding:17px 10px 15px 0px; position:absolute; bottom:0; right:0;}
+
+
+
+
+}
