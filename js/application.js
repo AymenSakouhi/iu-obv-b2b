@@ -2266,10 +2266,10 @@ document.getElementById("studyProgram").addEventListener("change", function() {
         $('#datepicker').datepicker("setDate", new Date(2022,5,1) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,5,1)})
     } else {
-        $('#datepicker').datepicker("setDate", +20 )
-        $('#datepicker').datepicker("option",{ minDate: +20})
-        $('#datepicker').datepicker("setDate", +20 )
-        $('#datepicker').datepicker("option",{ minDate: +20})
+        $('#datepicker').datepicker("setDate", +10 )
+        $('#datepicker').datepicker("option",{ minDate: +10})
+        $('#datepicker').datepicker("setDate", +10 )
+        $('#datepicker').datepicker("option",{ minDate: +10})
     }
 
     //here
