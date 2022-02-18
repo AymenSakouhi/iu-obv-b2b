@@ -2233,11 +2233,11 @@ document.getElementById("studyProgram").addEventListener("change", function() {
         $('#datepicker').datepicker("setDate", new Date(2022,7,15) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,7,15)})
     }else if($("#studyProgram :selected").text() === "M.Sc. Data Management - 120" ){
-        $('#datepicker').datepicker("setDate", new Date(2022,2,1) );
-        $('#datepicker').datepicker("option",{ minDate: new Date(2022,2,1)})
-    } else if($("#studyProgram :selected").text() === "B.A. International Healthcare Management - 180" || $("#studyProgram :selected").text() === "M.A. International Healthcare Management - 120"){
         $('#datepicker').datepicker("setDate", new Date(2022,3,1) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,3,1)})
+    } else if($("#studyProgram :selected").text() === "B.A. International Healthcare Management - 180" || $("#studyProgram :selected").text() === "M.A. International Healthcare Management - 120"){
+        $('#datepicker').datepicker("setDate", new Date(2022,4,1) );
+        $('#datepicker').datepicker("option",{ minDate: new Date(2022,4,1)})
     } else if($("#studyProgram :selected").text() === "M.A. International Healthcare Management - 60" ){
         $('#datepicker').datepicker("setDate", new Date(2022,8,30) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,8,30)})
@@ -2256,9 +2256,6 @@ document.getElementById("studyProgram").addEventListener("change", function() {
     }else if( $("#studyProgram :selected").text() === "M.A. Human Resource Management - 60" || $("#studyProgram :selected").text() === "M.Sc. Artificial Intelligence - 60"){
         $('#datepicker').datepicker("setDate", new Date(2022,6,15) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,6,15)})
-    }else if($("#studyProgram :selected").text() === "M.Sc. Artificial Intelligence - 60"){
-        $('#datepicker').datepicker("setDate", new Date(2022,7,1) );
-        $('#datepicker').datepicker("option",{ minDate: new Date(2022,7,1)})
     }else if($("#studyProgram :selected").text() === "M.A. Project Management - 60"){
         $('#datepicker').datepicker("setDate", new Date(2022,11,1) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,11,1)})
