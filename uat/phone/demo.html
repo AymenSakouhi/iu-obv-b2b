@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8"><meta name="robots" content="noindex">
+
+  <title>International Telephone Input</title>
+  <link rel="stylesheet" href="build/css/intlTelInput.css">
+  <link rel="stylesheet" href="build/css/demo.css">
+</head>
+
+<body>
+  <h1>International Telephone Input</h1>
+  <form>
+
+    <input id="phone" name="phone" type="tel">
+    <button type="submit">Submit</button>
+  </form>
+  <script src="build/js/intlTelInput.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js" integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ==" crossorigin="anonymous"></script>
+  <script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+      hiddenInput: "full_phone",
+      initialCountry: "auto",
+      geoIpLookup: function(success, failure) {
+          axios({
+            method : 'get',
+            url : 'https://ipinfo.io',
+            responseType : 'json'
+          }).then(function(response) {
+            console.log(response);
+          success(response.data.country);
+        })
+      },
+      utilsScript: "../../build/js/utils.js?1613236686837", // just for formatting/placeholders etc
+      // allowDropdown: false,
+      // autoHideDialCode: false,
+      // autoPlaceholder: "off",
+      // dropdownContainer: document.body,
+      // excludeCountries: ["us"],
+      // formatOnDisplay: false,
+      // geoIpLookup: function(callback) {
+      //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      //     var countryCode = (resp && resp.country) ? resp.country : "";
+      //     callback(countryCode);
+      //   });
+      // },
+      // hiddenInput: "full_number",
+      // initialCountry: "auto",
+      // localizedCountries: { 'de': 'Deutschland' },
+      // nationalMode: false,
+      // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+      // placeholderNumberType: "MOBILE",
+      // preferredCountries: ['cn', 'jp'],
+      // separateDialCode: true,
+      //utilsScript: "build/js/utils.js",
+    });
+  </script>
+</body>
+
+</html>

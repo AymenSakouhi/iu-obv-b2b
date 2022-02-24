@@ -2141,20 +2141,16 @@ document.getElementById("Degree").addEventListener("change", function() {
     $("#campus1").css("background","url()");
     $("#campus2").css("background","url()");
 
-    // note: the datepicker change will happen in the change function for the program not the degree
+    /* $('#datepicker').datepicker("setDate", +10 )
+    $('#datepicker').datepicker("option",{ minDate: +10})
+    $('#datepicker').datepicker("setDate", +10 )
+    $('#datepicker').datepicker("option",{ minDate: +10})
 
-    // $('#datepicker').datepicker("setDate", +10 )
-    // $('#datepicker').datepicker("option",{ minDate: +10})
-    // $('#datepicker').datepicker("setDate", +10 )
-    // $('#datepicker').datepicker("option",{ minDate: +10})
-
-    // question: Is this loop necessary? If so maybe it should be moved to the change function of the degree
-
-    // setTimeout(function () {
-    //     document.querySelectorAll('.study-start').forEach(item => {
-    //         item.value = $( "#datepicker" ).val()
-    //     })
-    // },100)
+    setTimeout(function () {
+        document.querySelectorAll('.study-start').forEach(item => {
+            item.value = $( "#datepicker" ).val()
+        })
+    },100) */
 
 
             //document.getElementsByClassName("study-start")[0].value = $( "#datepicker" ).val()
@@ -2191,8 +2187,7 @@ document.getElementById("Degree").addEventListener("change", function() {
             document.getElementsByClassName('study-programme')[1].value = $('#studyProgram').find(":selected").text();
 
             // trigger the change function of the study program to fix the date picker
-            document.getElementById('studyProgram').dispatchEvent(new CustomEvent('change'));
-
+            document.getElementById('studyProgram').dispatchEvent(new CustomEvent('change'));   
 
         document.getElementsByClassName("finalPrice")[0].classList.add("crossed");
         document.getElementsByClassName("finalPrice")[1].classList.add("crossed");
@@ -2214,6 +2209,7 @@ document.getElementById("Degree").addEventListener("change", function() {
 
             document.getElementsByClassName('study-programme')[0].value = $('#studyProgram').find(":selected").text();
             document.getElementsByClassName('study-programme')[1].value = $('#studyProgram').find(":selected").text();
+
 
             // trigger the change function of the study program to fix the date picker
             document.getElementById('studyProgram').dispatchEvent(new Event('change'));

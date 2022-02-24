@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"><meta name="robots" content="noindex">
+
+    <title>Title</title>
+</head>
+<body>
+<input type="file" multiple/>
+
+
+</body>
+<script>
+
+    let fileList = []
+    // Create a DataTransfer instance and add a newly created file
+    const dataTransfer = new DataTransfer();
+    //dataTransfer.items.add(new File(["hello world"], "This_Works.txt"));
+
+    // Assign the DataTransfer files list to the file input
+    let input = document.querySelector("input")
+    input.files = dataTransfer.files;
+
+
+    input.addEventListener('change', function (evnt) {
+        fileList = dataTransfer.files;
+        for (let i = 0; i < input.files.length; i++) {
+            dataTransfer.items.add(input.files[i]);
+        }
+        input.files  = dataTransfer.files
+
+    })
+
+
+
+</script>
+</html>
