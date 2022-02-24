@@ -2235,18 +2235,21 @@ document.getElementById("studyProgram").addEventListener("change", function() {
     // $( "#graduationFee" ).addClass( "hide" )
     // $( "#graduationFee2" ).addClass( "hide" )
 
-    if($("#studyProgram :selected").text() === "M.Sc. Data Management - 60" || $("#studyProgram :selected").text() === "M.Sc. Business Intelligence - 60" || $("#studyProgram :selected").text() === "B.A. Aviation Management - 180" || $("#studyProgram :selected").text() === "B.A. Hospitality Management - 180"){
+    if($("#studyProgram :selected").text() === "B.A. Aviation Management - 180" || $("#studyProgram :selected").text() === "B.A. Hospitality Management - 180"){
         $('#datepicker').datepicker("setDate", new Date(2022,8,1) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,8,1)})
-    }else if($("#studyProgram :selected").text() === "B.Eng. Engineering - 180" ){
+    } else if($("#studyProgram :selected").text() === "M.Sc. Data Management - 60" || $("#studyProgram :selected").text() === "M.Sc. Business Intelligence - 60" ) {
+        $('#datepicker').datepicker("setDate", new Date(2023,8,1) );
+        $('#datepicker').datepicker("option",{ minDate: new Date(2023,8,1)})
+    } else if($("#studyProgram :selected").text() === "B.Eng. Engineering - 180" ){
         $('#datepicker').datepicker("setDate", new Date(2022,7,15) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,7,15)})
     }else if($("#studyProgram :selected").text() === "M.Sc. Data Management - 120" ){
+        $('#datepicker').datepicker("setDate", new Date(2023,2,1) );
+        $('#datepicker').datepicker("option",{ minDate: new Date(2023,2,1)})
+    } else if($("#studyProgram :selected").text() === "B.A. International Healthcare Management - 180" || $("#studyProgram :selected").text() === "M.A. International Healthcare Management - 120"){
         $('#datepicker').datepicker("setDate", new Date(2022,3,1) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,3,1)})
-    } else if($("#studyProgram :selected").text() === "B.A. International Healthcare Management - 180" || $("#studyProgram :selected").text() === "M.A. International Healthcare Management - 120"){
-        $('#datepicker').datepicker("setDate", new Date(2022,4,1) );
-        $('#datepicker').datepicker("option",{ minDate: new Date(2022,4,1)})
     } else if($("#studyProgram :selected").text() === "M.A. International Healthcare Management - 60" ){
         $('#datepicker').datepicker("setDate", new Date(2022,8,30) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,8,30)})
@@ -2257,8 +2260,8 @@ document.getElementById("studyProgram").addEventListener("change", function() {
         $('#datepicker').datepicker("setDate", new Date(2022,10,16) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,10,16)})
     }else if( $("#studyProgram :selected").text() === "M.Sc. Business Intelligence - 120"){
-        $('#datepicker').datepicker("setDate", new Date(2022,2,1) );
-        $('#datepicker').datepicker("option",{ minDate: new Date(2022,2,1)})
+        $('#datepicker').datepicker("setDate", new Date(2023,2,1) );
+        $('#datepicker').datepicker("option",{ minDate: new Date(2023,2,1)})
     }else if( $("#studyProgram :selected").text() === "M.Sc. Finance, Accounting & Taxation - 120" || $("#studyProgram :selected").text() === "M.A. Innovation & Entrepreneurship - 120"){
         $('#datepicker').datepicker("setDate", new Date(2022,4,16) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,4,16)})
