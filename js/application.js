@@ -2265,7 +2265,7 @@ document.getElementById("studyProgram").addEventListener("change", function() {
     }else if( $("#studyProgram :selected").text() === "M.Sc. Finance, Accounting & Taxation - 120" || $("#studyProgram :selected").text() === "M.A. Innovation & Entrepreneurship - 120"){
         $('#datepicker').datepicker("setDate", new Date(2022,4,16) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,4,16)})
-    }else if( $("#studyProgram :selected").text() === "M.A. Human Resource Management - 60" || $("#studyProgram :selected").text() === "M.Sc. Artificial Intelligence - 60"){
+    }else if( $("#studyProgram :selected").text() === "M.A. Human Resource Management - 60"){
         $('#datepicker').datepicker("setDate", new Date(2022,6,15) );
         $('#datepicker').datepicker("option",{ minDate: new Date(2022,6,15)})
     }else if($("#studyProgram :selected").text() === "M.A. Project Management - 60"){
