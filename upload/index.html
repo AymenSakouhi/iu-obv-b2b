@@ -558,7 +558,7 @@
         <script>
         let x = false;
         let sumUploadedFiles = 0;
-        let requiredInput = ['upload_cv','upload_proof_of_english_proficiency','upload_Transcript_of_record']
+        let requiredInput = ['upload_cv','upload_highest_academic_certificate','upload_Transcript_of_record','upload_id']
         function validation(){
             let s = 0;
             sumUploadedFiles = 0;
@@ -567,7 +567,7 @@
                     s++
                 }
             });
-            if(s===3){
+            if(s===4){
                 jQuery('input[type="file"]').each(function(e, i) {
                     if( jQuery(this).val()){
                         sumUploadedFiles++
