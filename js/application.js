@@ -961,6 +961,14 @@ let mT = [
     {
         "name" : 'M.Eng. Engineering Management - 60',
         "careId" : '10008075_FI'
+    },
+    {
+        "name": "MBA - Specialisation Salesforce - 90",
+        "careId": "121_FI_SF",
+    },
+    {
+        "name": "M.Sc. Cyber Security Management - 60",
+        "careId": "10008015_FI",
     }
 
 
@@ -1031,7 +1039,9 @@ mtCheckOnline = [
     "B.A. International Management - 180",
     "M.A. Project Management - 60",
     "M.A. Project Management - 120",
-    "MBA - Specialisation E-Sports Management - 90"
+    "MBA - Specialisation E-Sports Management - 90",
+    "MBA - Specialisation Salesforce - 90",
+    "M.Sc. Cyber Security Management - 60"
 
 ]
 
