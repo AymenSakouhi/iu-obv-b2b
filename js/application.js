@@ -114,6 +114,24 @@ function scrollTo() {
 
 }
 
+function errorPush(label) {
+    if (label === '~b2b') {
+        console.log('there was no error')
+    } else {
+        window.dataLayer.push({
+            event: 'customEvent',
+            eventData: {
+                action: 'submit error',
+                category: 'Application Form',
+                label: label
+            }
+        });
+        console.log('error sent')
+        console.log(label)
+    }
+
+}
+
 
 //to check only english letters
 document.getElementById('first-name').addEventListener('input', function(){
@@ -146,6 +164,137 @@ $('.container').bind('click', function(e) {
     }
 });
 
+
+
+let step1 = (function() {
+    var executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+
+            window.dataLayer.push({
+                event: 'ee-checkout',
+                eventData: {
+                    action: 'checkout',
+                    category: 'ecommerce',
+                    label: 'step 2'
+                },
+                ecommerce: {
+                    checkout: {
+                        actionField: {
+                            action: 'checkout',
+                            step: 2
+                        }
+                    }
+                }
+            });
+
+            window.dataLayer.push({
+                event: 'ee-addToCart',
+                eventData: {
+                    action: 'addToCart',
+                    category: 'ecommerce',
+                },
+                ecommerce: {
+                    checkout: {
+                        actionField: {
+                            action: 'addToCart',
+                            step: 2
+                        }
+                    }
+                }
+            });
+        }
+    };
+})();
+
+let step3 = (function() {
+    var executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+
+            window.dataLayer.push({
+                event: 'ee-checkout',
+                eventData: {
+                    action: 'checkout',
+                    category: 'ecommerce',
+                    label: 'step 3'
+                },
+                ecommerce: {
+                    checkout: {
+                        actionField: {
+                            action: 'checkout',
+                            step: 3
+                        }
+                    }
+                },
+                user  : {
+                    gender : $("input[name='gender']:checked").val(),
+                    zip : $("#postcode").val(),
+                    dateBirth : $("#date-of-birth").val()
+                }
+            });
+        }
+    };
+})();
+
+let step4 = (function() {
+    var executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+
+            window.dataLayer.push({
+                event: 'ee-checkout',
+                eventData: {
+                    action: 'checkout',
+                    category: 'ecommerce',
+                    label: 'step 4'
+                },
+                ecommerce: {
+                    checkout: {
+                        actionField: {
+                            action: 'checkout',
+                            step: 4
+                        }
+                    }
+                }
+            });
+
+
+
+            window.dataLayer.push({
+                event: 'ee-checkout_option',
+                eventData: {
+                    action: 'checkout-option',
+                    category: 'ecommerce',
+                },
+                ecommerce: {
+                    checkout: {
+                        actionField: {
+                            action: 'checkout-option',
+                            step: 4
+                        }
+                    }
+                }
+            });
+        }
+    };
+})();
+
+
+$( "#city" ).change(function() {
+    setTimeout(function () {
+        step3()
+    },5000)
+
+});
+
+
+/*$("input[name='workexperience']").click(function() {
+    step4()
+});*/
 
 document.querySelectorAll(".toSelect").forEach(item => {
     item.addEventListener('click', event => {
@@ -1045,6 +1194,7 @@ function activate() {
     if (!checkingFields()) {
         let x = EmptyFields();
         scrollTo();
+        errorPush(x)
         return 0;
     }
     $('.loading').toggleClass("hide")
@@ -1257,7 +1407,46 @@ function activate() {
             //Long link in case variables arent accessible in the success page
             //window.location.href='success.html?firstname='+ myName+'&surName='+surName+'&country='+country+'&email='+email+'&mobileNumber='+mobileNumber+'&address='+address+'&studyProgram='+studyProgram+'&key='+obj.key
             //For shorting the link
-            
+            window.dataLayer.push({
+                event: 'ee-transaction',
+                eventData: {
+                    label: '',
+                    action: 'transaction',
+                    category: 'ecommerce'
+                },
+                ecommerce: {
+                    purchase: {
+                        actionField: {
+                            id: t.key
+                        },
+                        products: [
+                            {
+                                name: $("#studyProgram :selected").text(),
+                                id: t.studyProgram,
+                                category: 'studiegang/' + degree.toLowerCase(),
+                                variant: t.studyDuration+'Monat~'+t.studyStartDate,
+                                quantity: 1,
+                                brand: t.locationSite,
+                                value: t.finalPrice,
+                                location : campsite,
+                                duration: t.duration,
+                                intake: t.intake,
+                                businessUnit : t.businessUnit
+
+                            }
+                        ]
+                    }
+                },
+                user: {
+                    id: t.key
+                },
+                mqa: {
+                    budget: "Above 300 EUR",
+                    englishlevel: "10",
+                    workExperience: 10,
+                    diploma : diplom
+                }
+            });
             console.log(t.businessUnit)
             console.log(t.completed)
             setTimeout(function () {
@@ -1290,6 +1479,9 @@ function findOutAndChange(x, y) {
         for (let i = 0; i < D2.length; i++) {
             D2[i].value = D1.value;
             PriceChange();
+        }
+        if ($("input[name='timemodel']:checked").length !== 0){
+            step1();
         }
     }
     else if(y === 'gender') {
