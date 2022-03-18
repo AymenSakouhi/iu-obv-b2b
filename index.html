@@ -47,83 +47,8 @@
 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css" integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw==" crossorigin="anonymous" />
 
-    <!-- Google Tag Manager -->
+    <script type="text/javascript" src="https://try.abtasty.com/6bc6f48a60507004de27487bcf06bc06.js"></script>
 
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-
-    })(window,document,'script','dataLayer','GTM-NTFTFHJ');</script>
-
-    <!-- End Google Tag Manager -->
-
-    <!-- Google Tag Manager -->
-
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-
-    })(window,document,'script','dataLayer','GTM-M35C44B');</script>
-
-    <!-- End Google Tag Manager -->
-
-    <script>
-
-        dataLayer.push({
-
-            'event': 'pageview',
-
-            'eventData': {
-
-                'action': 'pageview',
-
-                'category': 'page'
-
-            },
-
-            'page': {
-
-                'name': "/b2b",
-
-                'type': 'obw',
-
-                'status': 200,
-
-                'language': 'en',
-
-                'topLevelDomain': 'com',
-
-                'subDomain': ''
-
-            }
-
-        });
-
-        window.dataLayer.push({
-            event: 'ee-checkout',
-            eventData: {
-                action: 'checkout',
-                category: 'ecommerce',
-                label: 'step 1'
-            },
-            ecommerce: {
-                checkout: {
-                    actionField: {
-                        action: 'checkout',
-                        step: 1
-                    }
-                }
-            }
-        });
-    </script>
     <style>
         /* Absolute Center Spinner */
         .loading{
@@ -251,22 +176,6 @@
     <script type="text/javascript" src="//cdn.evgnet.com/beacon/careerpartner/iu_em/scripts/evergage.min.js"></script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTFTFHJ"
-
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-<!-- End Google Tag Manager (noscript) -->
-<!-- Google Tag Manager (noscript) -->
-
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M35C44B"
-
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-<!-- End Google Tag Manager (noscript) -->
-
-
 
 <div class="header">
     <div class="container">
@@ -2038,54 +1947,6 @@ setTimeout(function () {
 
 </footer>
 
-<script>
-    const getUrlParameter = param => {
-        const urlParams = new URLSearchParams(window.location.search)
-        return urlParams.get(param)
-    }
-    const setGtmCookie = () => {
-        const utmSource = getUrlParameter('utm_source')
-        const utmMedium = getUrlParameter('utm_medium')
-        const utmCampaign = getUrlParameter('utm_campaign')
-        const gclid = getUrlParameter('gclid')
-        const utmCookie = getCookie('sfStore') || 'eyJ1dG0iOiIiLCJnY2xpZCI6IiJ9'
-        const encodedUtmCookie = JSON.parse(atob(utmCookie))
-        let utmParams
-        if (utmSource || utmMedium || utmCampaign) {
-            utmParams = `${utmSource}~${utmMedium}~${utmCampaign}`
-        }
-        if (utmParams) {
-            encodedUtmCookie.utm = encodeURIComponent(utmParams)
-        }
-        if (gclid) {
-            encodedUtmCookie.gclid = encodeURIComponent(gclid)
-        }
-        document.cookie = 'sfStore=' + window.btoa(JSON.stringify(encodedUtmCookie)) + '; path=/; domain=' + document.location.hostname + ';';
-    }
-
-
-    setGtmCookie();
-
-    window.setPartnerizeCookie = function () {
-    if (navigator.cookieEnabled) {
-        if ( -1 === document.cookie.indexOf('_obwc') ) {
-            let clickRef = new RegExp('[\?&]' + 'clickref' + '=([^&#]*)').exec(window.location.search);
-            if ( null !== clickRef ) {
-                document.cookie = '_phf=' + clickRef[1] + '; expires=' + new Date(new Date().getTime() + (2 * 365 * 24 * 60 * 60 * 1000)).toUTCString() + '; path=/'
-            }
-            if ( -1 !== window.location.pathname.indexOf('obw') ) {
-                document.cookie = '_obwc=1' + '; path=/'
-            }
-        }
-    }
-    }
-
-
-    setPartnerizeCookie()
-
-
-
-</script>
 <!-- File Upload -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.js" integrity="sha512-llCHNP2CQS+o3EUK2QFehPlOngm8Oa7vkvdUpEFN71dVOf3yAj9yMoPdS5aYRTy8AEdVtqUBIsVThzUSggT0LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="upload/js/jquery.dropzone.js" type="text/javascript"></script>
