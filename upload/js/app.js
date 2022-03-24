@@ -7,6 +7,18 @@ console.log(result);
 let t = JSON.parse(localStorage.getItem('allData'));
 console.log(t);
 
+function hasWhiteSpace(s) {
+    return s.indexOf(' ') >= 0;
+}
+
+if(hasWhiteSpace(t.email)){
+    t.email = t.email.replace(/\s/g, '')
+    console.log('corrected')
+} else {
+    console.log('No white spaces')
+}
+
+
 if (t.degree === "Bachelor"){
     $('.upload_proof_of_work_experience-cont').hide()
 }
