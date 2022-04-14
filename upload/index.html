@@ -216,7 +216,7 @@
                                         <div class="col-md-4 col-sm-4 col-xs-12 upload_other_documents-cont">
                                             <div class="upload-block">
                                                 <label for="upload_other_documents" class="custom-file-upload">
-                                                    <i class="fa fa-upload" aria-hidden="true"></i> Upload other documents 
+                                                    <i class="fa fa-upload" aria-hidden="true"></i> Upload other documents (at max 5)
                                                 </label>
                                                 <div class="loader-img upload_other_documents-loader"></div>
                                                 <input id="upload_other_documents" name='upload_other_documents' type="file" style="display:none;">
@@ -594,8 +594,8 @@
                         jQuery("#pre-"+ID).addClass('disable-div');
                         return false;
                     } 
-                    else if(geekss.size > 1400000) {
-                        alert('Please upload file less than 1.4MB.');
+                    else if(geekss.size > 14000000) {
+                        alert('Please upload file less than 14MB.');
                         fileInput.value = '';
                         jQuery("#pre-"+ID).addClass('disable-div');
                         return false;
