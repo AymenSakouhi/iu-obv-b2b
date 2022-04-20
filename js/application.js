@@ -520,7 +520,7 @@ let tabc1 = [
   { name: "Iceland", code: "IS", tier: 1 },
   { name: "India", code: "IN", tier: 2 },
   { name: "Indonesia", code: "ID", tier: 2 },
-  { name: "Iran, Islamic Republic Of", code: "IR", tier: 2 },
+  { name: "Iran, Islamic Republic of", code: "IR", tier: 2 },
   { name: "Iraq", code: "IQ", tier: 2 },
   { name: "Ireland", code: "IE", tier: 1 },
   { name: "Isle of Man", code: "IM", tier: 2 },
