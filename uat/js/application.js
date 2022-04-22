@@ -2515,7 +2515,7 @@ $("input[name='studyLocation']").change(function() {
     if ($('input[name="studyLocation"]:checked').val() === "Study on campus") {
         businessUnit = "cs";
         obwVersion = "defaultEN";
-        agbVersion = "2.8";
+        agbVersion = "3.0";
         directDebit = true;
 
         changeCareIds()
