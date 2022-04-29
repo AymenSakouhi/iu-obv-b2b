@@ -213,13 +213,14 @@
                                                 <input id="upload_proof_of_work_experience" name='upload_proof_of_work_experience' type="file" style="display:none;">
                                             </div>
                                         </div>
+                                        <!-- here -->
                                         <div class="col-md-4 col-sm-4 col-xs-12 upload_other_documents-cont">
                                             <div class="upload-block">
                                                 <label for="upload_other_documents" class="custom-file-upload">
                                                     <i class="fa fa-upload" aria-hidden="true"></i> Upload other documents (at max 5)
                                                 </label>
                                                 <div class="loader-img upload_other_documents-loader"></div>
-                                                <input id="upload_other_documents" name='upload_other_documents' type="file" style="display:none;">
+                                                <input id="upload_other_documents" name='upload_other_documents' type="file" style="display:none;" multiple onclick="removeOtherDocs()">
                                             </div>
                                         </div>
                                     </div> 
@@ -279,15 +280,57 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12 col-sm-12 col-xs-12 disable-div" id="pre-upload_other_documents" >
+                                        <div class="col-md-12 col-sm-12 col-xs-12 disable-div" id="pre-upload_other_documents-1" >
                                             <div class="preview" style="color:black;">
                                                 <div class="progress-bar"></div>
                                                 <div class="file-name"></div>
                                                 <div class="file-size"></div>
-                                                <div class="file-remove" data-id="upload_other_documents"><i class="fas fa-times"></i></div>
+                                                <div class="file-remove" data-id="upload_other_documents-1"><i class="fas fa-times"></i></div>
                                                 <div class="clearfix"></div>
                                             </div>
                                         </div>
+
+                                        <div class="col-md-12 col-sm-12 col-xs-12 disable-div" id="pre-upload_other_documents-2" >
+                                            <div class="preview" style="color:black;">
+                                                <div class="progress-bar"></div>
+                                                <div class="file-name"></div>
+                                                <div class="file-size"></div>
+                                                <div class="file-remove" data-id="upload_other_documents-2"><i class="fas fa-times"></i></div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12 col-xs-12 disable-div" id="pre-upload_other_documents-3" >
+                                            <div class="preview" style="color:black;">
+                                                <div class="progress-bar"></div>
+                                                <div class="file-name"></div>
+                                                <div class="file-size"></div>
+                                                <div class="file-remove" data-id="upload_other_documents-3"><i class="fas fa-times"></i></div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12 col-xs-12 disable-div" id="pre-upload_other_documents-4" >
+                                            <div class="preview" style="color:black;">
+                                                <div class="progress-bar"></div>
+                                                <div class="file-name"></div>
+                                                <div class="file-size"></div>
+                                                <div class="file-remove" data-id="upload_other_documents-4"><i class="fas fa-times"></i></div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12 col-xs-12 disable-div" id="pre-upload_other_documents-5" >
+                                            <div class="preview" style="color:black;">
+                                                <div class="progress-bar"></div>
+                                                <div class="file-name"></div>
+                                                <div class="file-size"></div>
+                                                <div class="file-remove" data-id="upload_other_documents-5"><i class="fas fa-times"></i></div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+
+
                                         <div id="uploadStatus"></div>
                                     </div>  
                                     <div class="row"> 
@@ -556,9 +599,12 @@
         <script src="js/awesomefonts.js"></script>
 
         <script>
+            // clear all divs when clicking upload other docs
         let x = false;
         let sumUploadedFiles = 0;
         let requiredInput = ['upload_cv','upload_highest_academic_certificate','upload_Transcript_of_record','upload_id']
+        let optionalInputAdded = []
+        let  numoptionalUploaded = 0;
         function validation(){
             let s = 0;
             sumUploadedFiles = 0;
@@ -567,7 +613,9 @@
                     s++
                 }
             });
-            if(s===4){
+
+            const numUploaded =  $("#upload_other_documents")[0].files.length;
+            if(s===4 && numUploaded <= 5){
                 jQuery('input[type="file"]').each(function(e, i) {
                     if( jQuery(this).val()){
                         sumUploadedFiles++
@@ -576,25 +624,50 @@
                 x = true;
                 return true;
             }
+
+            if (numUploaded > 5) {
+                alert("You can only upload 5 additional documents");
+            }
+        }
+
+        function removeOtherDocs(){
+            var ID;
+            for(let i = 1; i <= 5; i++) {
+                ID = "upload_other_documents" + "-" + i;
+                jQuery("#pre-"+ID).addClass('disable-div');
+            }
+
+            optionalInputAdded = []
+            const dt = new DataTransfer();
+            ("#upload_other_documents")[0].files = dt.files;
+
+            ID = "upload_other_documents";
+            document.getElementById(ID).value = '';
         }
 
         jQuery(document).ready(function() {
             jQuery('input[type="file"]').change(function(e) {
                 var ID = jQuery(this).attr('id');
                 var geekss = e.target.files[0];
+
+                const files = e.target.files;
+                const sizes = Object.keys(files).map(key => files[key].size);
+                const fileNames = Object.keys(files).map(key => files[key].name);
+
                 if(geekss){
 
                     var fileInput = document.getElementById(ID);
                     // Allowing file type
                     var allowedExtensions = 
                     /(\.jpeg|\.jpg|\.png|\.pdf|\.doc|\.docx)$/i;
-                    if ( !allowedExtensions.exec( fileInput.value ) ) {
+                    if (!fileNames.every(x => allowedExtensions.exec(x))) {
+                        // change!
                         alert('Invalid file type');
                         fileInput.value = '';
                         jQuery("#pre-"+ID).addClass('disable-div');
                         return false;
                     } 
-                    else if(geekss.size > 14000000) {
+                    else if(sizes.every( x => x > 14000000)) {
                         alert('Please upload file less than 14MB.');
                         fileInput.value = '';
                         jQuery("#pre-"+ID).addClass('disable-div');
@@ -602,9 +675,23 @@
                     } 
                     else 
                     {
-                        jQuery("#pre-"+ID+' .preview .file-name').text(geekss.name);
-                        jQuery("#pre-"+ID+' .preview .file-size').text( (geekss.size/1024).toFixed(2) + 'kb'); 
-                        jQuery("#pre-"+ID).removeClass('disable-div');
+                        if(ID === "upload_other_documents") {
+                            const numUploaded =  $("#upload_other_documents")[0].files.length;
+                            numoptionalUploaded = numUploaded;
+                            let i = 1;
+                            for(i; i <= numUploaded; i++){
+                                geekss = e.target.files[i-1];
+                                jQuery("#pre-"+ID+ '-' + i + ' .preview .file-name').text(geekss.name);
+                                jQuery("#pre-"+ID+ '-' + i + ' .preview .file-size').text( (geekss.size/1024).toFixed(2) + 'kb'); 
+                                jQuery("#pre-"+ID+ '-' + i).removeClass('disable-div');
+                                optionalInputAdded.push(ID+ '-' + i)
+                            }
+                        } else {
+                            jQuery("#pre-"+ID+' .preview .file-name').text(geekss.name);
+                            jQuery("#pre-"+ID+' .preview .file-size').text( (geekss.size/1024).toFixed(2) + 'kb'); 
+                            jQuery("#pre-"+ID).removeClass('disable-div');
+                        }
+                            
                     }
 
                 }
@@ -630,7 +717,34 @@
             jQuery('.file-remove').on('click', function(e) {
                 var ID = $(this).data('id');
                 jQuery("#pre-"+ID).addClass('disable-div');
-                document.getElementById(ID).value = '';
+
+                if(ID.includes('upload_other_documents')){
+                    
+                    const fileName = document.getElementById("pre-" + ID).getElementsByClassName("file-name")[0].innerHTML;
+                    let files = $("#upload_other_documents")[0].files;
+                    
+                    const dt = new DataTransfer();
+                    for (let i = 0; i < files.length; i++) {
+                        const file = files[i]
+                        if (file.name !== fileName) {
+                            dt.items.add(file)
+                        } else {
+                            optionalInputAdded = optionalInputAdded.filter(e => e !== ID)
+                        }
+                    }
+                    $("#upload_other_documents")[0].files = dt.files;
+                    
+                    numoptionalUploaded--;
+                    if(numoptionalUploaded === 0) {
+                        ID = "upload_other_documents";
+                        document.getElementById(ID).value = '';
+
+                    }
+                } else {
+                    document.getElementById(ID).value = '';
+                }
+
+                
                 if(!validation()){
                     switch (ID) {
                         case 'upload_id' :
@@ -709,8 +823,20 @@
             function uploadImage(ID, typex)
             {
                 var form_data = new FormData();
-                form_data.append("upload", document.getElementById(ID).files[0]);
-                 $.ajax({
+                if(ID == "upload_other_documents") {
+                    const numUploaded =  $("#upload_other_documents")[0].files.length;
+                    for(let i = 0; i < numUploaded; i++) {
+                        form_data.append("upload", document.getElementById(ID).files[i]);
+                        uploadFormData(optionalInputAdded[i], typex, form_data);
+                    }
+                } else {
+                    form_data.append("upload", document.getElementById(ID).files[0]);
+                    uploadFormData(ID, typex, form_data);
+                }
+            }
+
+            function uploadFormData(ID, typex, form_data) {
+                $.ajax({
                     xhr: function() {
                         var xhr = new window.XMLHttpRequest();
                         xhr.upload.addEventListener("progress", function(evt) {
