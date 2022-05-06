@@ -902,6 +902,22 @@ let mT = [
     careId: "10007999_FI",
   },
   {
+    name: "B.A. Management - 240",
+    careId: "10008630_FI"
+  },
+  {
+    name: "B.A. Human Resource Management - 180",
+    careId: "10008709_FI"
+  },
+  {
+    name: "B.A. Marketing - 180",
+    careId: "10008708_FI"
+  },
+  {
+    name: "B.Sc. Industrial and Organisational Psychology - 180",
+    careId: "10008626_FI"
+  },
+  {
     name: "B.Sc. Data Science - 180",
     careId: "10007851",
   },
@@ -1042,6 +1058,10 @@ let mT = [
 //online only
 mtCheckOnline = [
   "M.Eng. Engineering Management - 60",
+  "B.A. Management - 240",
+  "B.A. Human Resource Management - 180",
+  "B.A. Marketing - 180",
+  "B.Sc. Industrial and Organisational Psychology - 180",
   "M.A. International Management - Specialisation Finance & Accounting - 120",
   "M.A. International Management - Specialisation IT Management - 120",
   "M.A. International Management - Specialisation Engineering Management - 120",
@@ -2107,6 +2127,87 @@ function PriceChange() {
               Math.ceil((parseFloat(x) / 18).toFixed(1));
           }
         }
+      } else if($("#studyProgram :selected").text().includes("240")) {
+        //verifyStudyModel()
+        switch (document.getElementsByClassName("study-model")[0].value) {
+          case "48": {
+            document.getElementsByClassName("finalPrice")[0].innerHTML =
+              "31344";
+            document.getElementsByClassName("finalPrice")[1].innerHTML =
+              "31344";
+            document.getElementsByClassName(
+              "totalBeforeDiscount"
+            )[0].innerHTML = "31344";
+            document.getElementsByClassName(
+              "totalBeforeDiscount"
+            )[1].innerHTML = "31344";
+            document.getElementsByClassName("monthlyPriceBefore")[0].innerHTML =
+              Math.ceil((parseFloat("31344") / 48).toFixed(1));
+            document.getElementsByClassName("monthlyPriceBefore")[1].innerHTML =
+              Math.ceil((parseFloat("31344") / 48).toFixed(1));
+            x = parseFloat("31344");
+            document.getElementsByClassName("discountPrice")[0].innerHTML =
+              Math.ceil(x.toFixed(1));
+            document.getElementsByClassName("discountPrice")[1].innerHTML =
+              Math.ceil(x.toFixed(1));
+            document.getElementsByClassName("monthlyPrice")[0].innerHTML =
+              Math.ceil((parseFloat(x) / 48).toFixed(1));
+            document.getElementsByClassName("monthlyPrice")[1].innerHTML =
+              Math.ceil((parseFloat(x) / 48).toFixed(1));
+            break;
+          }
+          case "72": {
+            document.getElementsByClassName("finalPrice")[0].innerHTML =
+              "36000";
+            document.getElementsByClassName("finalPrice")[1].innerHTML =
+              "36000";
+            document.getElementsByClassName(
+              "totalBeforeDiscount"
+            )[0].innerHTML = "36000";
+            document.getElementsByClassName(
+              "totalBeforeDiscount"
+            )[1].innerHTML = "36000";
+            document.getElementsByClassName("monthlyPriceBefore")[0].innerHTML =
+              Math.ceil((parseFloat("36000") / 72).toFixed(1));
+            document.getElementsByClassName("monthlyPriceBefore")[1].innerHTML =
+              Math.ceil((parseFloat("36000") / 72).toFixed(1));
+            x = parseFloat("36000");
+            document.getElementsByClassName("discountPrice")[0].innerHTML =
+              Math.ceil(x.toFixed(1));
+            document.getElementsByClassName("discountPrice")[1].innerHTML =
+              Math.ceil(x.toFixed(1));
+            document.getElementsByClassName("monthlyPrice")[0].innerHTML =
+              Math.ceil((parseFloat(x) / 72).toFixed(1));
+            document.getElementsByClassName("monthlyPrice")[1].innerHTML =
+              Math.ceil((parseFloat(x) / 72).toFixed(1));
+            break;
+          }
+          default: {
+            document.getElementsByClassName("finalPrice")[0].innerHTML =
+              "31344";
+            document.getElementsByClassName("finalPrice")[1].innerHTML =
+              "31344";
+            document.getElementsByClassName(
+              "totalBeforeDiscount"
+            )[0].innerHTML = "31344";
+            document.getElementsByClassName(
+              "totalBeforeDiscount"
+            )[1].innerHTML = "31344";
+            document.getElementsByClassName("monthlyPriceBefore")[0].innerHTML =
+              Math.ceil((parseFloat("31344") / 48).toFixed(1));
+            document.getElementsByClassName("monthlyPriceBefore")[1].innerHTML =
+              Math.ceil((parseFloat("31344") / 48).toFixed(1));
+            x = parseFloat("31344");
+            document.getElementsByClassName("discountPrice")[0].innerHTML =
+              Math.ceil(x.toFixed(1));
+            document.getElementsByClassName("discountPrice")[1].innerHTML =
+              Math.ceil(x.toFixed(1));
+            document.getElementsByClassName("monthlyPrice")[0].innerHTML =
+              Math.ceil((parseFloat(x) / 48).toFixed(1));
+            document.getElementsByClassName("monthlyPrice")[1].innerHTML =
+              Math.ceil((parseFloat(x) / 48).toFixed(1));
+          }
+        }
       }
 
       break;
@@ -2330,6 +2431,91 @@ function PriceChange() {
           }
         }
       }
+
+      else if ($("#studyProgram :selected").text().includes("240")) {
+        //verifyStudyModel()
+        switch (document.getElementsByClassName("study-model")[0].value) {
+          case "48": {
+            document.getElementsByClassName("finalPrice")[0].innerHTML =
+              "31344";
+            document.getElementsByClassName("finalPrice")[1].innerHTML =
+              "31344";
+            document.getElementsByClassName(
+              "totalBeforeDiscount"
+            )[0].innerHTML = "31344";
+            document.getElementsByClassName(
+              "totalBeforeDiscount"
+            )[1].innerHTML = "31344";
+            document.getElementsByClassName("monthlyPriceBefore")[0].innerHTML =
+              Math.ceil((parseFloat("31344") / 48).toFixed(1));
+            document.getElementsByClassName("monthlyPriceBefore")[1].innerHTML =
+              Math.ceil((parseFloat("31344") / 48).toFixed(1));
+            x = parseFloat("31344") * disC;
+            document.getElementsByClassName("discountPrice")[0].innerHTML =
+              Math.ceil(x.toFixed(1));
+            document.getElementsByClassName("discountPrice")[1].innerHTML =
+              Math.ceil(x.toFixed(1));
+            document.getElementsByClassName("monthlyPrice")[0].innerHTML =
+              Math.ceil((parseFloat(x) / 48).toFixed(1));
+            document.getElementsByClassName("monthlyPrice")[1].innerHTML =
+              Math.ceil((parseFloat(x) / 48).toFixed(1));
+            break;
+          }
+          case "72": {
+            document.getElementsByClassName("finalPrice")[0].innerHTML =
+              "36000";
+            document.getElementsByClassName("finalPrice")[1].innerHTML =
+              "36000";
+            document.getElementsByClassName(
+              "totalBeforeDiscount"
+            )[0].innerHTML = "36000";
+            document.getElementsByClassName(
+              "totalBeforeDiscount"
+            )[1].innerHTML = "36000";
+            document.getElementsByClassName("monthlyPriceBefore")[0].innerHTML =
+              Math.ceil((parseFloat("36000") / 72).toFixed(1));
+            document.getElementsByClassName("monthlyPriceBefore")[1].innerHTML =
+              Math.ceil((parseFloat("36000") / 72).toFixed(1));
+            x = parseFloat("36000") * disC;
+            document.getElementsByClassName("discountPrice")[0].innerHTML =
+              Math.ceil(x.toFixed(1));
+            document.getElementsByClassName("discountPrice")[1].innerHTML =
+              Math.ceil(x.toFixed(1));
+            document.getElementsByClassName("monthlyPrice")[0].innerHTML =
+              Math.ceil((parseFloat(x) / 72).toFixed(1));
+            document.getElementsByClassName("monthlyPrice")[1].innerHTML =
+              Math.ceil((parseFloat(x) / 72).toFixed(1));
+            break;
+          }
+          default: {
+            document.getElementsByClassName("finalPrice")[0].innerHTML =
+              "31344";
+            document.getElementsByClassName("finalPrice")[1].innerHTML =
+              "31344";
+            document.getElementsByClassName(
+              "totalBeforeDiscount"
+            )[0].innerHTML = "31344";
+            document.getElementsByClassName(
+              "totalBeforeDiscount"
+            )[1].innerHTML = "31344";
+            document.getElementsByClassName("monthlyPriceBefore")[0].innerHTML =
+              Math.ceil((parseFloat("31344") / 48).toFixed(1));
+            document.getElementsByClassName("monthlyPriceBefore")[1].innerHTML =
+              Math.ceil((parseFloat("31344") / 48).toFixed(1));
+            x = parseFloat("31344") * disC;
+            document.getElementsByClassName("discountPrice")[0].innerHTML =
+              Math.ceil(x.toFixed(1));
+            document.getElementsByClassName("discountPrice")[1].innerHTML =
+              Math.ceil(x.toFixed(1));
+            document.getElementsByClassName("monthlyPrice")[0].innerHTML =
+              Math.ceil((parseFloat(x) / 48).toFixed(1));
+            document.getElementsByClassName("monthlyPrice")[1].innerHTML =
+              Math.ceil((parseFloat(x) / 48).toFixed(1));
+          }
+        }
+      }
+
+
     }
   }
 }
@@ -2556,6 +2742,22 @@ document.getElementById("studyProgram").addEventListener("change", function () {
   ) {
     $("#datepicker").datepicker("setDate", new Date(2022, 5, 1));
     $("#datepicker").datepicker("option", { minDate: new Date(2022, 5, 1) });
+  } else if (
+    $("#studyProgram :selected").text() === "B.A. Management - 240"
+  ) {
+    $("#datepicker").datepicker("setDate", new Date(2022, 9, 4));
+    $("#datepicker").datepicker("option", { minDate: new Date(2022, 9, 4) });
+  } else if (
+    $("#studyProgram :selected").text() === "B.A. Human Resource Management - 180"  ||
+    $("#studyProgram :selected").text() ===
+      "B.A. Marketing - 180"
+  ) {
+    $("#datepicker").datepicker("setDate", new Date(2023, 3, 3));
+    $("#datepicker").datepicker("option", { minDate: new Date(2023, 3, 3) });
+  } else if (
+    $("#studyProgram :selected").text() === "B.Sc. Industrial and Organisational Psychology - 180") {
+    $("#datepicker").datepicker("setDate", new Date(2023, 1, 1));
+    $("#datepicker").datepicker("option", { minDate: new Date(2023, 1, 1) });
   } else {
     $("#datepicker").datepicker("setDate", +10);
     $("#datepicker").datepicker("option", { minDate: +10 });
@@ -2629,9 +2831,37 @@ document.getElementById("studyProgram").addEventListener("change", function () {
     )
       .find(":selected")
       .text();
+  } else if ($("#studyProgram :selected").text().includes("240")) {
+    starting();
+    document.getElementById("bgrInformation").innerHTML =
+      "Do you have a Highschool Diploma?";
+    document.getElementsByClassName("numMonth")[0].innerHTML = 48;
+    document.getElementsByClassName("numMonth")[1].innerHTML = 72;
+    document.getElementsByClassName("numMonth")[2].innerHTML = 0;
+    document.getElementById("monthsone").value = "48";
+    document.getElementById("monthstwo").value = "72";
+    document.getElementById("monthsthree").value = "0";
+    document.getElementsByClassName("study-programme")[0].innerHTML = $(
+      "#studyProgram"
+    )
+      .find(":selected")
+      .text();
+    document.getElementsByClassName("study-programme")[1].innerHTML = $(
+      "#studyProgram"
+    )
+      .find(":selected")
+      .text();
+    setTimeout(() => {
+        //to actually show only two time models
+    $("div").find("label[for=monthsthree]").hide();
+    $("#monthsone").trigger("click");
+    //the opposite way
+    //$("div").find("label[for=monthsthree]").show();
+    //$("#monthsone").trigger("click");
+     }, 120);
   } else {
     starting();
-    //because all the rest is bachelor
+    //because all the rest is bachelor and 180 so we need to reinitilize the months time model
     document.getElementsByClassName("study-programme")[0].value = $(
       "#studyProgram"
     )
