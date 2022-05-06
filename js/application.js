@@ -2860,6 +2860,12 @@ document.getElementById("studyProgram").addEventListener("change", function () {
     //$("#monthsone").trigger("click");
      }, 120);
   } else {
+    document.getElementsByClassName("numMonth")[0].innerHTML = 36;
+    document.getElementsByClassName("numMonth")[1].innerHTML = 48;
+    document.getElementsByClassName("numMonth")[2].innerHTML = 72;
+    document.getElementById("monthsone").value = "36";
+    document.getElementById("monthstwo").value = "48";
+    document.getElementById("monthsthree").value = "72";
     starting();
     //because all the rest is bachelor and 180 so we need to reinitilize the months time model
     document.getElementsByClassName("study-programme")[0].value = $(
