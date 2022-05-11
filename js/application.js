@@ -1376,6 +1376,10 @@ function activate() {
     voucherVar = document.getElementById("voucher").value;
     let StudyAdvisor = document.getElementById("StudyAdvisor").value;
 
+    let agentEmail = document.getElementById("agentEmail").value;
+    let agentFirstName = document.getElementById("agentFirstName").value;
+    let agentLastName = document.getElementById("agentLastName").value;
+
     let t = {
       degree: degree,
       name: myName,
@@ -1401,6 +1405,10 @@ function activate() {
       locationSite: locationSite,
       intake: intake,
       voucher: voucherVar,
+      agentEmail : agentEmail,
+      agentFirstName : agentFirstName,
+      agentLastName : agentLastName,
+      agentVoucher : voucherVar,
       //"eSignature" : eSignature,
       optIn: false,
       businessUnit: businessUnit,
@@ -1484,6 +1492,9 @@ function activate() {
           gtmGclid: q,
           gtmSource: null,
           optIn: false,
+          agentEmail : agentEmail,
+          agentFirstName : agentFirstName,
+          agentLastName : agentLastName,
         }),
       }
     )
