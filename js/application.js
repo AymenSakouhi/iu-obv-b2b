@@ -29,6 +29,14 @@ let discMyStu120M = 0.865815;
 //error function + labels
 let labelContent = "";
 
+const validateEmail = (email) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+
 function EmptyFields() {
   labelContent = "";
   if (document.getElementById("voucher").value == "") {
@@ -1289,6 +1297,10 @@ function checkingFields() {
   ) {
     validatefilledIn();
     $("#myModal").modal();
+    document.getElementById("submit").disabled = false;
+    return false;
+  } else if(!validateEmail($("#agentEmail").val())) {
+    $("#AgentEmailModal").modal();
     document.getElementById("submit").disabled = false;
     return false;
   } else {
