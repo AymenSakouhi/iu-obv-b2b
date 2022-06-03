@@ -17,7 +17,7 @@ function f1() {
 
     for (let i = 0; i < $('#upload')[0].files.length; i++) {
         data.append('upload', input.files[i])
-        fetch('https://api.careerpartner.eu/centraldataservice-api/lara/api/v2/file/'+result+'/file-upload?type=application', {
+        fetch('https://api.careerpartner.eu/integration-centraldataservice-api/lara/api/v2/file/'+result+'/file-upload?type=application', {
             method: 'POST',
             body: data
         }).then(res => {

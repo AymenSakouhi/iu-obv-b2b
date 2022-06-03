@@ -1434,12 +1434,12 @@ function activate() {
     let obj;
 
     fetch(
-      "https://api.careerpartner.eu/centraldataservice-api/lara/api/v2/application/obw",
+      "https://api.careerpartner.eu/integration-centraldataservice-api/lara/api/v2/application/obw",
       {
         method: "POST",
         headers: {
-          //Authorization: "TPPDVgSNCvp4TY5y",
-          Authorization: "74UgeuBcRZjX6akV",
+          Authorization: "TPPDVgSNCvp4TY5y",
+          //Authorization: "74UgeuBcRZjX6akV",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({

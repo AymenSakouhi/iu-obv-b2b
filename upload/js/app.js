@@ -42,7 +42,7 @@ fetch('https://hooks.zapier.com/hooks/catch/9270658/btreyx9/' , {
 
 
 function getOppInfo() {
-    fetch('https://api.careerpartner.eu/centraldataservice-api/lara/api/v2/application/obw/'+result , {
+    fetch('https://api.careerpartner.eu/integration-centraldataservice-api/lara/api/v2/application/obw/'+result , {
         method : 'GET',
         headers: {
             //Authorization: "TPPDVgSNCvp4TY5y",
