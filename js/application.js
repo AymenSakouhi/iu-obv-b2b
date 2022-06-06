@@ -14,9 +14,11 @@ let allIntakes = [
   "oct21",
   "jan22",
   "apr22",
-  "jun22",
+  "jul22",
   "oct22",
   "apr23",
+  "jan23",
+  "jul23",
   "oct23",
 ];
 let difference = [];
@@ -216,6 +218,182 @@ function errorPush(label) {
   }
 }
 
+NanBadHonnef = [
+  {
+    name: "M.A. International Management - 60",
+    tillIntake: "Jul 22, Oct 22, Jan 23, Apr 23",
+  },
+  {
+    name: "M.Eng. Engineering Management - 60",
+    tillIntake: "Apr 22",
+  },
+  {
+    name: "M.Sc. Computer Science - 120",
+    tillIntake: "Oct 22, Apr 23, Oct 23",
+  },
+  {
+    name: "M.A. International Management - 120",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "M.A. International Management - Specialisation Big Data Management - 120",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "M.A. International Management - Specialisation Engineering Management - 120",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "M.A. International Management - Specialisation IT Management - 120",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "M.A. International Management - Specialisation International Marketing - 120",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "M.A. International Management - Specialisation Finance & Accounting - 120",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "M.A. International Management - Specialisation AI & Robotics - 120",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "MBA One-Year - 60",
+    tillIntake: "Apr 22",
+  },
+  {
+    name: "MBA - Master of Business Administration - 90",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "MBA - Specialisation Big Data Management - 90",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "MBA - Specialisation International Marketing - 90",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "MBA - Specialisation Finance & Accounting - 90",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "MBA - Specialisation Engineering Management - 90",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "MBA - Specialisation IT Management - 90",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "MBA - Specialisation Health Care Management - 90",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "MBA - Specialisation Human Resource Management - 90",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "MBA - Specialisation Supply Chain Management - 90",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "MBA - Specialisation Innovation & Entrepreneurship - 90",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "MBA - Specialisation Artificial Intelligence - 90",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "MBA - Specialisation E-Sports Management - 90",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "MBA - Specialisation Salesforce - 90",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "M.A. Management - 60",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "M.A. Management - Specialisation Big Data Management - 60",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "M.A. Management - Specialisation Engineering Management - 60",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "M.A. Management - Specialisation IT Management - 60",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "M.A. Management - Specialisation Finance & Accounting - 60",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "M.A. Management - Specialisation International Marketing - 60",
+    tillIntake: "Jul 22",
+  },
+  {
+    name: "M.A. Marketing Management - 120 ECTS",
+    tillIntake: "Apr 22",
+  },
+  {
+    name: "M.A. Marketing Management - 60 ECTS",
+    tillIntake: "Apr 22",
+  },
+];
+
+function removeBadHonnefBasedIntake(curIntake) {
+  let curIntakeIndex = 0;
+  let intakeIndex = 2;
+  if (
+    mT.find(
+      ({ name, studyLocation }) =>
+        name === $("#studyProgram :selected").text() &&
+        studyLocation === "OnlyBerlin"
+    )
+  ) {
+    //hiding because onlyBerlin was found when searching in the course attributes
+    $("#badHonnefLocation").addClass("hide");
+    return 0;
+  } else {
+    //not hiding badhonnef because no onlyBerlin found when searching in course attribute
+    $("#badHonnefLocation").removeClass("hide");
+  }
+
+  const isIndexOf = (element) => element === curIntake;
+  curIntakeIndex = allIntakes.findIndex(isIndexOf); //to find out what's the index of the curIntake in the allintakes array
+
+  NanBadHonnef.find(({ name, tillIntake }) => {
+    if (name === $("#studyProgram :selected").text()) {
+      const isIndexOfTillIntake = (element) =>
+        element === tillIntake.replace(/\s+/g, "").toLowerCase();
+      intakeIndex = allIntakes.findIndex(isIndexOfTillIntake);
+    }
+  });
+  if (
+    curIntakeIndex > intakeIndex &&
+    NanBadHonnef.find(
+      ({ name }) => name === $("#studyProgram :selected").text()
+    ) &&
+    !mT.find(
+      ({ name, studyLocation }) =>
+        name === $("#studyProgram :selected").text() &&
+        studyLocation === "OnlyBerlin"
+    )
+  ) {
+    $("#badHonnefLocation").addClass("hide");
+  } else {
+    $("#badHonnefLocation").removeClass("hide");
+  }
+}
+
 //to check only english letters
 document.getElementById("first-name").addEventListener("input", function () {
   this.value = this.value.replace(/[^\x00-\x7F]+/gi, "");
@@ -225,11 +403,11 @@ document.getElementById("last-name").addEventListener("input", function () {
 });
 
 //randomly choose a study advisor
-select = document.getElementById("StudyAdvisor");
+// select = document.getElementById("StudyAdvisor");
 $("#StudyAdvisor").prop("disabled", true);
-let items = select.getElementsByTagName("option");
-let index = Math.floor(Math.random() * items.length);
-select.selectedIndex = index;
+// let items = select.getElementsByTagName("option");
+// let index = Math.floor(Math.random() * items.length);
+// select.selectedIndex = index;
 
 $(window).scroll(function () {
   if ($(window).scrollTop() == $(document).height() - $(window).height()) {
@@ -768,6 +946,8 @@ let mT = [
   {
     name: "B.A. Business Administration - 180",
     careId: "10007953_FI",
+    careIdCs: "10008367",
+    intake: "Oct 22, Jan 23, Apr 23,  Jul 23, Oct 23",
   },
   {
     name: "M.Sc. Artificial Intelligence - 60",
@@ -776,22 +956,38 @@ let mT = [
   {
     name: "M.Sc. Artificial Intelligence - 120",
     careId: "10007857",
+    careIdCs: "10008529_CS_AI",
+    intake: "Oct 22, Apr 23, Oct 23",
+    studyLocation: "OnlyBerlin",
   },
   {
     name: "M.Sc. Computer Science - 120",
     careId: "10007941_FI",
+    careIdCs: "10008373",
+    intake: "Oct 22, Apr 23, Oct 23",
+    intake2: "Apr 22, Oct 22, Apr 23, Oct 23",
+    studyLocation: "OnlyBerlin"
   },
   {
     name: "M.Sc. Data Science - 60",
     careId: "10007855",
+    careIdCs: "10008538_CS_DS",
+    intake: "Oct 22, Oct 23",
+    studyLocation: "OnlyBerlin",
   },
   {
     name: "M.Sc. Data Science - 120",
     careId: "10007854",
+    careIdCs: "10008537_CS_DS",
+    intake: "Oct 22, Oct 23",
+    studyLocation: "OnlyBerlin",
   },
   {
     name: "M.Sc. Cyber Security - 120",
     careId: "10008014_FI",
+    careIdCs: "10008533_CS",
+    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+    studyLocation: "OnlyBerlin"
   },
   {
     name: "M.Sc. Data Management - 60",
@@ -824,74 +1020,110 @@ let mT = [
   {
     name: "MBA One-Year - 60",
     careId: "120_FI",
+    careIdCs: "10008378",
+    intake: "Oct 21, Apr 22, Oct 22, Jan 23, Apr 23, Oct 23",
   },
   {
     name: "MBA - Master of Business Administration - 90",
     careId: "121_FI",
+    careIdCs: "10008379",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
   },
   {
     name: "MBA - Specialisation Big Data Management - 90",
     careId: "121_FI_BDM",
+    careIdCs: "10008379_BDM",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
   },
   {
     name: "MBA - Specialisation International Marketing - 90",
     careId: "121_FI_IM",
+    careIdCs: "10008379_IM",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
   },
   {
     name: "MBA - Specialisation Finance & Accounting - 90",
     careId: "121_FI_FA",
+    careIdCs: "10008379_FA",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
   },
   {
     name: "MBA - Specialisation Engineering Management - 90",
     careId: "121_FI_EM",
+    careIdCs: "10008379_EM",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
   },
   {
     name: "MBA - Specialisation IT Management - 90",
     careId: "121_FI_ITM",
+    careIdCs: "10008379_ITM",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
   },
   {
     name: "MBA - Specialisation Health Care Management - 90",
     careId: "121_FI_HCM",
+    careIdCs: "10008379_HCM",
+    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
   },
   {
     name: "MBA - Specialisation Human Resource Management - 90",
     careId: "121_FI_HRM",
+    careIdCs: "10008379_HRM",
+    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
   },
   {
     name: "MBA - Specialisation Supply Chain Management - 90",
     careId: "121_FI_SCM",
+    careIdCs: "10008379_SCM",
+    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
   },
   {
     name: "MBA - Specialisation Innovation & Entrepreneurship - 90",
     careId: "121_FI_IE",
+    careIdCs: "10008379_IE",
+    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
   },
   {
     name: "MBA - Specialisation Artificial Intelligence - 90",
     careId: "121_FI_AI",
+    careIdCs: "10008379_AI",
+    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
   },
   {
     name: "MBA - Specialisation E-Sports Management - 90",
     careId: "121_FI_ESM",
+    careIdCs: "10008379_ESM",
+    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "B.A. Entrepreneurship - 180",
     careId: "10008062_FI",
+    careIdCs: "10008526_CS_ENT",
+    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "B.A. International Management - 180",
     careId: "10008002_FI",
+    careIdCs: "10008371",
+    intake: "Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "B.A. Aviation Management - 180",
     careId: "10008295_FI_AM",
+    careIdCs: "10008472",
+    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "B.A. Hospitality Management - 180",
     careId: "10008294_FI_HM",
+    careIdCs: "10008477",
+    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "B.Eng. Robotics - 180",
     careId: "10007964_FI",
+    careIdCs: "10008527_CS_ROB",
+    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23"
   },
   /*{
         "name" : 'B.Eng. Engineering - 180',
@@ -900,14 +1132,20 @@ let mT = [
   {
     name: "B.Eng. Industrial Engineering & Management - 180",
     careId: "10008000_FI",
+    careIdCs: "10008370",
+    intake: "Oct 22, Jan 23, Apr 23,  Jul 23, Oct 23",
   },
   {
     name: "B.Sc. Applied Artificial Intelligence - 180",
     careId: "10008073_FI_AI",
+    careIdCs: "10008523_CS_AAI",
+    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "B.Sc. Cyber Security - 180",
     careId: "10007999_FI",
+    careIdCs: "10008524_CS",
+    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "B.A. Management - 240",
@@ -928,26 +1166,38 @@ let mT = [
   {
     name: "B.Sc. Data Science - 180",
     careId: "10007851",
+    careIdCs: "10008525_CS_DS",
+    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "B.Sc. Business & IT - 180",
     careId: "10008001_FI",
+    careIdCs: "10008368",
+    intake: "Oct 22, Jan 23, Apr 23,  Jul 23, Oct 23"
   },
   {
     name: "B.Sc. Computer Science - 180",
     careId: "10007944_FI",
+    careIdCs: "10008369",
+    intake: "Oct 22, Apr 23, Oct 23",
   },
   {
     name: "B.Sc. Software Development - 180",
     careId: "10008074_FI_SD",
+    careIdCs: "10008528_CS_SD",
+    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.A. Management - 60",
     careId: "10007958_FI",
+    careIdCs: "10008377",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.A. Management - Specialisation Finance & Accounting - 60",
     careId: "10007958_FI_FA",
+    careIdCs: "10008377_FA",
+    intake: "Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.A. Management - Specialisation Leadership - 60",
@@ -976,26 +1226,43 @@ let mT = [
   {
     name: "M.A. Management - Specialisation Engineering Management - 60",
     careId: "10007958_FI_EM",
+    careIdCs: "10008377_EM",
+    intake: "Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.A. Management - Specialisation Big Data Management - 60",
     careId: "10007958_FI_BDM",
+    careIdCs: "10008377_BDM",
+    intake: "Jan 22, Apr 22, Jul 22, Oct 22",
+    intake2: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.A. Management - Specialisation IT Management - 60",
     careId: "10007958_FI_ITM",
+    careIdCs: "10008377_ITM",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    intake2: "Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.A. Management - Specialisation International Marketing - 60",
     careId: "10007958_FI_IM",
+    careIdCs: "10008377_IM",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    intake2: "Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.A. Marketing Management - 60",
     careId: "10007977_FI",
+    careIdCs: "10008540_CS_MM",
+    intake: "Oct 22",
+    studyLocation: "OnlyBerlin",
   },
   {
     name: "M.A. Marketing Management - 120",
     careId: "10007976_FI",
+    careIdCs: "10008539_CS_MM",
+    intake: "Oct 22",
+    studyLocation: "OnlyBerlin",
   },
   {
     name: "M.A. Information Technology Management - 60",
@@ -1020,98 +1287,84 @@ let mT = [
   {
     name: "M.A. International Management - 60",
     careId: "10008044_FI",
+    careIdCs: "10008376",
+    intake: "Jul 22, Oct 22, Jan 23, Apr 23",
   },
   {
     name: "M.A. International Management - 120",
     careId: "10008045_FI",
+    careIdCs: "10008375",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.A. International Management - Specialisation AI & Robotics - 120",
     careId: "10008045_FI_AR",
+    careIdCs: "10008375_AR",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.A. International Management - Specialisation Big Data Management - 120",
     careId: "10008045_FI_BDM",
+    careIdCs: "10008375_BDM",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.A. International Management - Specialisation Engineering Management - 120",
     careId: "10008045_FI_EM",
+    careIdCs: "10008375_EM",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.A. International Management - Specialisation IT Management - 120",
     careId: "10008045_FI_ITM",
+    careIdCs: "10008375_ITM",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.A. International Management - Specialisation International Marketing - 120",
     careId: "10008045_FI_IM",
+    careIdCs: "10008375_IM",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.A. International Management - Specialisation Finance & Accounting - 120",
     careId: "10008045_FI_FA",
+    careIdCs: "10008375_FA",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.Eng. Engineering Management - 60",
     careId: "10008075_FI",
+    careIdCs: "10008374",
+    intake: "Oct 22, Apr 22, Oct 22, Apr 23, Oct 23",
+    studyLocation: "OnlyBerlin"
   },
   {
     name: "MBA - Specialisation Salesforce - 90",
     careId: "121_FI_SF",
+    careIdCs: "10008379_SF",
+    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.Sc. Cyber Security Management - 60",
     careId: "10008015_FI",
+    careIdCs: "10008534_CSM",
+    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+    studyLocation: "OnlyBerlin",
   },
 ];
 
 //online only
 mtCheckOnline = [
-  "M.Eng. Engineering Management - 60",
   "B.A. Management - 240",
   "B.A. Human Resource Management - 180",
   "B.A. Marketing - 180",
   "B.Sc. Industrial and Organisational Psychology - 180",
-  "M.A. International Management - Specialisation Finance & Accounting - 120",
-  "M.A. International Management - Specialisation IT Management - 120",
-  "M.A. International Management - Specialisation Engineering Management - 120",
-  "M.A. International Management - Specialisation International Marketing - 120",
-  "M.A. International Management - Specialisation Big Data Management - 120",
-  "M.A. International Management - Specialisation AI & Robotics - 120",
-  "M.A. International Management - 120",
-  "M.A. International Management - 60",
-  "M.A. Management - Specialisation International Marketing - 60",
-  "M.A. Management - Specialisation IT Management - 60",
-  "M.A. Management - Specialisation Big Data Management - 60",
-  "M.A. Management - Specialisation Engineering Management - 60",
-  "M.A. Management - Specialisation Finance & Accounting - 60",
-  "M.A. Management - 60",
-  "B.Sc. Computer Science - 180",
-  "B.Sc. Business & IT - 180",
-  "B.Eng. Industrial Engineering & Management - 180",
-  "MBA - Specialisation IT Management - 90",
-  "MBA - Specialisation Engineering Management - 90",
-  "MBA - Specialisation Finance & Accounting - 90",
-  "MBA - Specialisation International Marketing - 90",
-  "MBA - Specialisation Big Data Management - 90",
-  "MBA - Master of Business Administration - 90",
-  "MBA One-Year - 60",
-  "M.Sc. Computer Science - 120",
-  "B.Eng. Robotics - 180",
-  "B.A. Business Administration - 180",
-  "B.Sc. Data Science - 180",
   "B.A. Digital Business - 180",
-  "B.Sc. Cyber Security - 180",
-  "B.A. Entrepreneurship - 180",
-  "M.Sc. Data Science - 60",
-  "M.Sc. Data Science - 120",
   "M.Sc. Artificial Intelligence - 60",
-  "M.Sc. Artificial Intelligence - 120",
-  "M.A. Marketing Management - 60",
-  "M.A. Marketing Management - 120",
   "M.A. Management - Specialisation Leadership - 60",
-  "M.Sc. Cyber Security - 120",
   "M.A. Information Technology Management - 60",
   "M.A. Information Technology Management - 120",
-  "B.Sc. Applied Artificial Intelligence - 180",
   "M.Sc. Data Management - 60",
   "M.Sc. Data Management - 120",
   "B.A. International Healthcare Management - 180",
@@ -1119,25 +1372,14 @@ mtCheckOnline = [
   "M.A. International Healthcare Management - 60",
   "M.A. Human Resource Management - 120",
   "M.A. Human Resource Management - 60",
-  "B.Sc. Software Development - 180",
   "M.A. Digital Innovation & Intrapreneurship - 60",
   "M.Sc. Business Intelligence - 60",
   "M.Sc. Business Intelligence - 120",
   "M.Sc. Finance, Accounting & Taxation - 120",
   "M.A. Innovation & Entrepreneurship - 120",
-  "B.A. Aviation Management - 180",
-  "B.A. Hospitality Management - 180",
-  "B.A. International Management - 180",
+  "B.Eng. Engineering - 180",
   "M.A. Project Management - 60",
   "M.A. Project Management - 120",
-  "MBA - Specialisation E-Sports Management - 90",
-  "MBA - Specialisation Salesforce - 90",
-  "M.Sc. Cyber Security Management - 60",
-  "MBA - Specialisation Health Care Management - 90",
-  "MBA - Specialisation Human Resource Management - 90",
-  "MBA - Specialisation Supply Chain Management - 90",
-  "MBA - Specialisation Innovation & Entrepreneurship - 90",
-  "MBA - Specialisation Artificial Intelligence - 90"
 ];
 
 function fullOut(dip) {
@@ -1386,7 +1628,21 @@ function activate() {
     //let optIn = document.getElementById('toCheck').checked
 
     voucherVar = document.getElementById("voucher").value;
-    let StudyAdvisor = document.getElementById("StudyAdvisor").value;
+    //randomly choose a study advisor
+    let advisors;
+    if(businessUnit === "fi") {
+      // online study
+      // 0056900000BiYW4AAN => Azurra Hazelton
+      // 0056900000BiYVuAAN => Sara Al Ahmad
+      advisors = ["0056900000BiYW4AAN", "0056900000BiYVuAAN"]
+    } else if (businessUnit === 'cs') {
+      // campus study
+      // 0056900000Bj7SWAAZ => Kristina Glathe
+      // 0051r000008mOQKAA2 => Yu Ju Lin
+      advisors = ["0056900000Bj7SWAAZ", "0051r000008mOQKAA2"]
+    }
+    let advisorIndex = Math.floor(Math.random() * advisors.length);
+    let StudyAdvisor =advisors[advisorIndex];
 
     let agentEmail = document.getElementById("agentEmail").value;
     let agentFirstName = document.getElementById("agentFirstName").value;
@@ -1643,6 +1899,10 @@ function findOutAndChange(x, y) {
         D2[i].value = D1.value;
       }
     }
+  } else if (y === "campus" || y === "campusSite") {
+    for (let i = 0; i < D2.length; i++) {
+      D2[i].innerHTML = D1.value;
+    }
   } else if (x === "winterintake" || x === "winterintake2") {
     //intakes here
     document.getElementsByClassName("intake")[0].value = "70";
@@ -1650,6 +1910,15 @@ function findOutAndChange(x, y) {
     /*for (let i = 0; i < D2.length; i++) {
             D2[i].value = $("#"+x).val();
         }*/
+      removeBadHonnefBasedIntake("jan22");
+      checkIntakeStart();
+  } else if (x === "summerintake" || x === "summerintake") {
+    document.getElementsByClassName("intake")[0].value = "2022-04-01";
+    document.getElementsByClassName("intake")[1].value = "2022-04-01";
+    /*for (let i = 0; i < D2.length; i++) {
+            D2[i].value = $("#"+x).val();
+        }*/
+    removeBadHonnefBasedIntake("apr22");
     checkIntakeStart();
   } else if (x === "summerintake" || x === "summerintake2") {
     document.getElementsByClassName("intake")[0].value = "71";
@@ -1657,6 +1926,7 @@ function findOutAndChange(x, y) {
     /*for (let i = 0; i < D2.length; i++) {
             D2[i].value = $("#"+x).val();
         }*/
+    removeBadHonnefBasedIntake("jul22");
     checkIntakeStart();
   } else if (x === "winterintake3") {
     document.getElementsByClassName("intake")[0].value = "72";
@@ -1664,6 +1934,7 @@ function findOutAndChange(x, y) {
     /*for (let i = 0; i < D2.length; i++) {
             D2[i].value = $("#"+x).val();
         }*/
+    removeBadHonnefBasedIntake("oct22");
     checkIntakeStart();
   } else if (x === "summerintake3") {
     document.getElementsByClassName("intake")[0].value = "73";
@@ -1671,6 +1942,7 @@ function findOutAndChange(x, y) {
     /*for (let i = 0; i < D2.length; i++) {
             D2[i].value = $("#"+x).val();
         }*/
+    removeBadHonnefBasedIntake("apr23");
     checkIntakeStart();
   } else if (x === "winterintake4") {
     document.getElementsByClassName("intake")[0].value = "74";
@@ -1678,6 +1950,23 @@ function findOutAndChange(x, y) {
     /*for (let i = 0; i < D2.length; i++) {
             D2[i].value = $("#"+x).val();
         }*/
+    removeBadHonnefBasedIntake("oct22");
+    checkIntakeStart();
+  } else if (x === "winterintakejan23") {
+    document.getElementsByClassName("intake")[0].value = "2023-01-01";
+    document.getElementsByClassName("intake")[1].value = "2023-01-01";
+    /*for (let i = 0; i < D2.length; i++) {
+            D2[i].value = $("#"+x).val();
+        }*/
+    removeBadHonnefBasedIntake("jan23");
+    checkIntakeStart();
+  } else if (x === "summerintakejul23") {
+    document.getElementsByClassName("intake")[0].value = "2023-07-01";
+    document.getElementsByClassName("intake")[1].value = "2023-07-01";
+    /*for (let i = 0; i < D2.length; i++) {
+            D2[i].value = $("#"+x).val();
+        }*/
+    removeBadHonnefBasedIntake("jul23");
     checkIntakeStart();
   } else {
     for (let i = 0; i < D2.length; i++) {
@@ -1720,7 +2009,7 @@ function checkLocation() {
     document.querySelectorAll(".campus").forEach((item) => {
       item.value = "Study online";
     });
-    document.getElementById("something").value = "Study online";
+    // document.getElementById("something").value = "Study online";
     //$("#something").css("background","url(../images/online.png) 95% center no-repeat");
     $("#something").removeClass("study-campus");
     $("#something").addClass("study-online");
@@ -1789,8 +2078,8 @@ function checkLocation() {
 
     // $("#something").css("background","url(../images/on-campus.png) 95% center no-repeat");
     // $("#something").css("background-color","#F5F4F3");
-    /*$( "#something" ).removeClass( "study-online" )
-        $( "#something" ).addClass( "study-campus" )*/
+    $( "#something" ).removeClass( "study-online" )
+    $( "#something" ).addClass( "study-campus" )
 
     $("#campus1").css(
       "background",
