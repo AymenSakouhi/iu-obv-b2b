@@ -1352,6 +1352,18 @@ let mT = [
     intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
     studyLocation: "OnlyBerlin",
   },
+  {
+    name: "B.Sc. Applied Psychology - 180",
+    careId: "10008623_FI",
+  },
+  {
+    name: "M.A. Digital Marketing - 60",
+    careId: "10008036_FI",
+  },
+  {
+    name: "M.A. Digital Marketing - 120",
+    careId: "10008035_FI",
+  }
 ];
 
 //online only
@@ -1380,6 +1392,10 @@ mtCheckOnline = [
   "B.Eng. Engineering - 180",
   "M.A. Project Management - 60",
   "M.A. Project Management - 120",
+  "B.Sc. Industrial and Organisational Psychology - 180",
+  "B.Sc. Applied Psychology - 180",
+  "M.A. Digital Marketing - 60",
+  "M.A. Digital Marketing - 120",
 ];
 
 function fullOut(dip) {
@@ -3070,6 +3086,16 @@ document.getElementById("studyProgram").addEventListener("change", function () {
     $("#studyProgram :selected").text() === "B.Sc. Industrial and Organisational Psychology - 180") {
     $("#datepicker").datepicker("setDate", new Date(2023, 1, 1));
     $("#datepicker").datepicker("option", { minDate: new Date(2023, 1, 1) });
+  } else if( $("#studyProgram :selected").text() === "B.Sc. Applied Psychology - 180") {
+    $("#datepicker").datepicker("setDate", new Date(2023, 7, 1));
+    $("#datepicker").datepicker("option", { minDate: new Date(2023, 7, 1) });
+  } else if($("#studyProgram :selected").text() === "M.A. Digital Marketing - 60") {
+    $("#datepicker").datepicker("setDate", new Date(2023, 1, 11));
+    $("#datepicker").datepicker("option", { minDate: new Date(2023, 1, 11) });
+
+  } else if($("#studyProgram :selected").text() === "M.A. Digital Marketing - 120") {
+    $("#datepicker").datepicker("setDate", new Date(2023, 4, 2));
+    $("#datepicker").datepicker("option", { minDate: new Date(2023, 4, 2) });
   } else {
     $("#datepicker").datepicker("setDate", +10);
     $("#datepicker").datepicker("option", { minDate: +10 });
