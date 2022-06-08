@@ -87,6 +87,10 @@ function EmptyFields() {
 }
 
 function scrollTo() {
+  
+  const maxDate = new Date();
+  maxDate.setFullYear(maxDate.getFullYear() - 14);
+
   if (document.getElementById("voucher").value == "") {
     document
       .getElementById("voucher")
@@ -174,7 +178,7 @@ function scrollTo() {
         block: "center",
         inline: "nearest",
       });
-  } else if (document.getElementById("date-of-birth").value === "") {
+  } else if (new Date(document.getElementById("date-of-birth").value) > maxDate || document.getElementById("date-of-birth").value === "") {
     document
       .getElementById("date-of-birth")
       .scrollIntoView({
@@ -1433,6 +1437,9 @@ function validatefilledIn() {
   let arr = Array.from(requiredFields).filter((input) => input.required);
   let arr2 = $("label").filter(".pl-0");
 
+  const maxDate = new Date();
+  maxDate.setFullYear(maxDate.getFullYear() - 14);
+
   if ($("#Degree").find(":selected").text().startsWith("S")) {
     $("#Degree").css("border-color", "red");
   } else {
@@ -1482,10 +1489,25 @@ function validatefilledIn() {
     }
   }
 
+  if(new Date(document.getElementById("date-of-birth").value) > maxDate ||  document.getElementById("date-of-birth").value === "" ) {
+    $("#date-of-birth")
+      .css("border-color", "red")
+      .addClass("field-error")
+      .removeClass("field-valid");
+  } else {
+    $("#date-of-birth").css("border-color", "green")
+      .removeClass("field-error")
+      .addClass("field-valid");
+  }
+
   //document.getElementsByClassName('study-model')[0].value
 }
 
 function checkingFields() {
+
+  const maxDate = new Date();
+  maxDate.setFullYear(maxDate.getFullYear() - 14);
+
   let myNameCheck = document.getElementById("first-name").value;
   let surNameCheck = document.getElementById("last-name").value;
 
@@ -1555,6 +1577,11 @@ function checkingFields() {
   ) {
     validatefilledIn();
     $("#myModal").modal();
+    document.getElementById("submit").disabled = false;
+    return false;
+  } else if(new Date(document.getElementById("date-of-birth").value) > maxDate) {
+    validatefilledIn();
+    $("#dateOfBirthModal").modal();
     document.getElementById("submit").disabled = false;
     return false;
   } else if(!validateEmail($("#agentEmail").val())) {
