@@ -3117,9 +3117,8 @@ document.getElementById("studyProgram").addEventListener("change", function () {
     $("#datepicker").datepicker("setDate", new Date(2023, 7, 1));
     $("#datepicker").datepicker("option", { minDate: new Date(2023, 7, 1) });
   } else if($("#studyProgram :selected").text() === "M.A. Digital Marketing - 60") {
-    $("#datepicker").datepicker("setDate", new Date(2023, 1, 11));
-    $("#datepicker").datepicker("option", { minDate: new Date(2023, 1, 11) });
-
+    $("#datepicker").datepicker("setDate", new Date(2023, 10, 2));
+    $("#datepicker").datepicker("option", { minDate: new Date(2023, 10, 2) });
   } else if($("#studyProgram :selected").text() === "M.A. Digital Marketing - 120") {
     $("#datepicker").datepicker("setDate", new Date(2023, 4, 2));
     $("#datepicker").datepicker("option", { minDate: new Date(2023, 4, 2) });
