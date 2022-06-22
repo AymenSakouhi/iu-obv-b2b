@@ -791,19 +791,29 @@
                                 </select>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-12" translate="no">
                             <div class="form-group">
                                 <label for="voucher">Partner Voucher <span class="required-mark">*</span></label>
                                 <input type="text" name="" value="" id="voucher" placeholder="PARTNER VOUCHER CODE" required>
                             </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12" translate="no">
                             <div class="form-group">
                                 <label for="agentEmail">Partner Email <span class="required-mark">*</span></label>
                                 <input class="space" type="text" name="" value="" id="agentEmail" placeholder="Partner Email">
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12" translate="no">
                             <div class="form-group">
                                 <label for="agentFirstName">Partner First Name <span class="required-mark">*</span></label>
                                 <input class="space" type="text" name="" value="" id="agentFirstName" placeholder="Partner First Name">
                             </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12" translate="no">
                             <div class="form-group">
                                 <label for="agentLastName">Partner Last Name <span class="required-mark">*</span></label>
                                 <input class="space" type="text" name="" value="" id="agentLastName" placeholder="Partner Last Name">
@@ -1207,6 +1217,49 @@
                                                 Bad Honnef</h5></label>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formblock">
+                    <div class="row" style="align-items: baseline">
+                        <div class="col-md-6 col-sm-6 col-xs-12" translate="no">
+                            <div class="form-group">
+                                <label class="text-transform-none" >Would you like to do a part of your studies on campus?*</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="form-group">
+                                <div class="radiobtn">
+                                    <input type="radio" id="yes" name="yescampus" value="1" onclick="findOutAndChange(this.id,'yescampus')" required/>
+                                    <label for="yes" class="pl-0"><h5 class="text-center">Yes</h5></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="form-group">
+                                <div class="radiobtn">
+                                    <input type="radio" id="no" name="nocampus" value="0" onclick="" />
+                                    <label for="no" class="pl-0"><h5 class="text-center">No</h5></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12" translate="no">
+                            <div id="site" class="toHide" style="display: block;"></div>
+                                <span>When would you like to start on campus?</span>
+                                <div class="form-group">
+                                    <select name="startdate" id="startdate" onchange="">
+                                        <option value="" disabled selected>Choose one</option>
+                                        <option value="oct22">October 2022</option>
+                                        <option value="jan23">January 2023</option>
+                                        <option value="apr23">April 2023</option>
+                                        <option value="jul23">July 2023</option>
+                                        <option value="oct23">October 2023</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
