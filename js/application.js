@@ -1350,13 +1350,6 @@ let mT = [
     intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
-    name: "M.Sc. Cyber Security Management - 60",
-    careId: "10008015_FI",
-    careIdCs: "10008534_CSM",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
-    studyLocation: "OnlyBerlin",
-  },
-  {
     name: "B.Sc. Applied Psychology - 180",
     careId: "10008623_FI",
   },
