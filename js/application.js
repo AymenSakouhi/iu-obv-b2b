@@ -1675,7 +1675,8 @@ function activate() {
       // campus study
       // 0056900000Bj7SWAAZ => Kristina Glathe
       // 0051r000008mOQKAA2 => Yu Ju Lin
-      advisors = ["0056900000Bj7SWAAZ", "0051r000008mOQKAA2"]
+      // 0056900000BiYW4AAN => Azurra Hazelton
+      advisors = ["0056900000Bj7SWAAZ", "0051r000008mOQKAA2", "0056900000BiYW4AAN"]
     }
     let advisorIndex = Math.floor(Math.random() * advisors.length);
     let StudyAdvisor =advisors[advisorIndex];
