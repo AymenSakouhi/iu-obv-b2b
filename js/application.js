@@ -1666,18 +1666,10 @@ function activate() {
     voucherVar = document.getElementById("voucher").value;
     //randomly choose a study advisor
     let advisors;
-    if(businessUnit === "fi") {
-      // online study
-      // 0056900000BiYW4AAN => Azurra Hazelton
-      // 0056900000BiYVuAAN => Sara Al Ahmad
-      advisors = ["0056900000BiYW4AAN", "0056900000BiYVuAAN"]
-    } else if (businessUnit === 'cs') {
-      // campus study
-      // 0056900000Bj7SWAAZ => Kristina Glathe
-      // 0051r000008mOQKAA2 => Yu Ju Lin
-      // 0056900000BiYW4AAN => Azurra Hazelton
-      advisors = ["0056900000Bj7SWAAZ", "0051r000008mOQKAA2", "0056900000BiYW4AAN"]
-    }
+    // 0056900000BiYW4AAN => Azurra Hazelton
+    // 0056900000BiYVuAAN => Sara Al Ahmad
+    advisors = ["0056900000BiYW4AAN", "0056900000BiYVuAAN"]
+
     let advisorIndex = Math.floor(Math.random() * advisors.length);
     let StudyAdvisor =advisors[advisorIndex];
 
