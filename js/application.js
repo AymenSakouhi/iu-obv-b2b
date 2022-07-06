@@ -1258,14 +1258,14 @@ let mT = [
     name: "M.A. Marketing Management - 60",
     careId: "10007977_FI",
     careIdCs: "10008540_CS_MM",
-    intake: "Oct 22",
+    intake: "Oct 22, Jan 23, Apr 23",
     studyLocation: "OnlyBerlin",
   },
   {
     name: "M.A. Marketing Management - 120",
     careId: "10007976_FI",
     careIdCs: "10008539_CS_MM",
-    intake: "Oct 22",
+    intake: "Oct 22, Jan 23, Apr 23",
     studyLocation: "OnlyBerlin",
   },
   {
@@ -3232,6 +3232,7 @@ document.getElementById("studyProgram").addEventListener("change", function () {
 });
 
 function checkIntakeStart() {
+  console.log($("input[type=radio][name=intake]:checked").val())
   switch ($("input[type=radio][name=intake]:checked").val()) {
     case "October 2021": {
       //$('#datepicker').datepicker("setDate", new Date(2021,9,1) )
