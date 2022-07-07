@@ -3108,6 +3108,10 @@ document.getElementById("studyProgram").addEventListener("change", function () {
   } else if($("#studyProgram :selected").text() === "M.A. Digital Marketing - 120") {
     $("#datepicker").datepicker("setDate", new Date(2023, 4, 2));
     $("#datepicker").datepicker("option", { minDate: new Date(2023, 4, 2) });
+  } else if($("#studyProgram :selected").text() === 'M.A. Marketing Management - 60' ||
+      $("#studyProgram :selected").text() === 'M.A. Marketing Management - 120') {
+    $("#datepicker").datepicker("setDate", new Date(2022, 9, 1));
+    $("#datepicker").datepicker("option", { minDate: new Date(2022, 9, 1) });
   } else {
     $("#datepicker").datepicker("setDate", +10);
     $("#datepicker").datepicker("option", { minDate: +10 });
