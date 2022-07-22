@@ -1362,6 +1362,10 @@ let mT = [
     careId: "10008035_FI",
   },
   {
+    name: "M.A. Growth Hacking for Entrepreneurs - 60",
+    careId: "10008716_FI",
+  },
+  {
     name: "M.A. Growth Hacking - 120",
     careId: "10008715_FI",
   },
@@ -1372,10 +1376,6 @@ let mT = [
   {
     name: "M.Sc. Industrial and Organizational Psychology - 120",
     careId: "10008624_FI",
-  },
-  {
-    name: "M.A. Growth Hacking for Entrepreneurs - 60",
-    careId: "10008716_FI",
   }
 ];
 
