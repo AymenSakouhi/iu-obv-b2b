@@ -1927,9 +1927,9 @@ function findOutAndChange(x, y) {
       } else if (D1.value === "Female") {
         D2[i].value = 2;
       } else if (D1.value === "Non-Binary") {
-        D2[i].value = 1;
+        D2[i].value = 3;
       } else {
-        D2[i].value = 1;
+        D2[i].value = 0;
       }
     }
   } else if (y === "diploma") {
