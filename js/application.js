@@ -1100,6 +1100,12 @@ let mT = [
     intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
+    name: "MBA - Specialisation Salesforce - 90",
+    careId: "121_FI_SF",
+    careIdCs: "10008379_SF",
+    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+  },
+  {
     name: "B.A. Entrepreneurship - 180",
     careId: "10008062_FI",
     careIdCs: "10008526_CS_ENT",
@@ -1195,17 +1201,41 @@ let mT = [
     name: "M.A. Management - 60",
     careId: "10007958_FI",
     careIdCs: "10008377",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.A. Management - Specialisation Finance & Accounting - 60",
     careId: "10007958_FI_FA",
     careIdCs: "10008377_FA",
-    intake: "Jan 22, Apr 22, Jul 22, Oct 22",
+    intake: "Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.A. Management - Specialisation Leadership - 60",
     careId: "10007958_FI_L",
+  },
+  {
+    name: "M.A. Management - Specialisation Engineering Management - 60",
+    careId: "10007958_FI_EM",
+    careIdCs: "10008377_EM",
+    intake: "Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+  },
+  {
+    name: "M.A. Management - Specialisation Big Data Management - 60",
+    careId: "10007958_FI_BDM",
+    careIdCs: "10008377_BDM",
+    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+  },
+  {
+    name: "M.A. Management - Specialisation IT Management - 60",
+    careId: "10007958_FI_ITM",
+    careIdCs: "10008377_ITM",
+    intake: "Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+  },
+  {
+    name: "M.A. Management - Specialisation International Marketing - 60",
+    careId: "10007958_FI_IM",
+    careIdCs: "10008377_IM",
+    intake: "Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23"
   },
   {
     name: "M.A. International Healthcare Management - 60",
@@ -1226,33 +1256,6 @@ let mT = [
   {
     name: "M.A. Innovation & Entrepreneurship - 120",
     careId: "10008132_FI_IE",
-  },
-  {
-    name: "M.A. Management - Specialisation Engineering Management - 60",
-    careId: "10007958_FI_EM",
-    careIdCs: "10008377_EM",
-    intake: "Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. Management - Specialisation Big Data Management - 60",
-    careId: "10007958_FI_BDM",
-    careIdCs: "10008377_BDM",
-    intake: "Jan 22, Apr 22, Jul 22, Oct 22",
-    intake2: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. Management - Specialisation IT Management - 60",
-    careId: "10007958_FI_ITM",
-    careIdCs: "10008377_ITM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-    intake2: "Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. Management - Specialisation International Marketing - 60",
-    careId: "10007958_FI_IM",
-    careIdCs: "10008377_IM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-    intake2: "Jan 22, Apr 22, Jul 22, Oct 22",
   },
   {
     name: "M.A. Marketing Management - 60",
@@ -1298,43 +1301,43 @@ let mT = [
     name: "M.A. International Management - 120",
     careId: "10008045_FI",
     careIdCs: "10008375",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.A. International Management - Specialisation AI & Robotics - 120",
     careId: "10008045_FI_AR",
     careIdCs: "10008375_AR",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.A. International Management - Specialisation Big Data Management - 120",
     careId: "10008045_FI_BDM",
     careIdCs: "10008375_BDM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.A. International Management - Specialisation Engineering Management - 120",
     careId: "10008045_FI_EM",
     careIdCs: "10008375_EM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.A. International Management - Specialisation IT Management - 120",
     careId: "10008045_FI_ITM",
     careIdCs: "10008375_ITM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    intake: "Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.A. International Management - Specialisation International Marketing - 120",
     careId: "10008045_FI_IM",
     careIdCs: "10008375_IM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.A. International Management - Specialisation Finance & Accounting - 120",
     careId: "10008045_FI_FA",
     careIdCs: "10008375_FA",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.Eng. Engineering Management - 60",
@@ -1342,12 +1345,6 @@ let mT = [
     careIdCs: "10008374",
     intake: "Oct 22, Apr 22, Oct 22, Apr 23, Oct 23",
     studyLocation: "OnlyBerlin"
-  },
-  {
-    name: "MBA - Specialisation Salesforce - 90",
-    careId: "121_FI_SF",
-    careIdCs: "10008379_SF",
-    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "B.Sc. Applied Psychology - 180",
@@ -1513,6 +1510,28 @@ function validatefilledIn() {
       .addClass("field-valid");
   }
 
+  if( $('input[name="studyLocation"]:checked').val() === "Online" &&
+      (
+        $("input[name=studyOnSite]:checked").length === 0 || 
+        ($("input[name=studyOnSite]:checked").val() === 'yes' && $("#onSiteStartDate")[0].selectedIndex === 0)
+      ) 
+    ){
+    const onSiteArr =  $("[name='studyOnSite']");
+    for (const [key, value] of Object.entries(onSiteArr)) {
+      $('label[for="' + value.id + '"]').css("border-color", "red");
+    }
+   $("#onSiteStartDate").css("border-color", "red")
+      .addClass("field-error")
+      .removeClass("field-valid");
+  } else {
+    const onSiteArr =  $("[name='studyOnSite']");
+    for (const [key, value] of Object.entries(onSiteArr)) {
+      $('label[for="' + value.id + '"]').css("border-color", "green");
+    }
+    $("#onSiteStartDate").css("border-color", "green")
+      .removeClass("field-error")
+      .addClass("field-valid");
+  }
   //document.getElementsByClassName('study-model')[0].value
 }
 
@@ -1569,6 +1588,16 @@ function checkingFields() {
     $("#myModalSite").modal();
     document.getElementById("submit").disabled = false;
     return false;
+  } else if(
+      $('input[name="studyLocation"]:checked').val() === "Online" &&
+      (
+        $("input[name=studyOnSite]:checked").length === 0 || 
+        ($("input[name=studyOnSite]:checked").val() === 'yes' && $("#onSiteStartDate")[0].selectedIndex === 0) 
+      )
+    ) {
+      validatefilledIn();
+      $("#onsiteModal").modal();
+      document.getElementById("submit").disabled = false;
   } else if ($("input[name=gender]:checked").length === 0) {
     validatefilledIn();
     $("#myModalgender").modal();
@@ -1637,6 +1666,25 @@ function activate() {
     //let englishLevel = document.getElementsByClassName('EnglishLevelSummary')[0].value;
     //let budgetPerMonth = document.getElementsByClassName('budgetSummary')[0].value;
     let campsite = document.getElementsByClassName("campusSite")[0].value;
+    
+    let campusInterest = null;
+    let intake = null;
+    if (document.getElementsByClassName("intake")[0].value !== "") {
+      //studyStartDate = null;
+      for (let i = 0; i < mT.length; i++) {
+        if (mT[i].name === $("#studyProgram :selected").text()) {
+          intake = document.getElementsByClassName("intake")[0].value;
+        }
+      }
+    }
+
+    let campusInterestStart = null;
+    if(businessUnit === "fi") {
+      campusInterest = $("input[name='studyOnSite']:checked").val();
+      if(campusInterest === "yes") {
+        campusInterestStart = document.getElementById("onSiteStartDate").value;
+      }
+    }
 
     /*let workExperience = 10;
     if (document.getElementsByClassName('workExperienceSummary')[0].value !== "") {
@@ -1669,15 +1717,6 @@ function activate() {
       //}
     }
 
-    let intake = null;
-    if (document.getElementsByClassName("intake")[0].value !== "") {
-      //studyStartDate = null;
-      for (let i = 0; i < mT.length; i++) {
-        if (mT[i].name === $("#studyProgram :selected").text()) {
-          intake = document.getElementsByClassName("intake")[0].value;
-        }
-      }
-    }
     let studyDuration = document.getElementsByClassName("study-model")[0].value;
 
     //let eSignature = document.getElementById('eSignature').checked
@@ -1710,6 +1749,7 @@ function activate() {
       mobileNumber: fullNumber,
       email: email,
       studyProgram: studyProgram,
+      campusInterest: campusInterest,
       studyStartDate: studyStartDate,
       englishLevel: "10",
       workExperience: 10,
@@ -1721,6 +1761,7 @@ function activate() {
       studyDuration: studyDuration,
       locationSite: locationSite,
       intake: intake,
+      campusInterestStart: campusInterestStart,
       voucher: voucherVar,
       agentEmail : agentEmail,
       agentFirstName : agentFirstName,
@@ -1772,8 +1813,10 @@ function activate() {
           city: city,
           country: country,
           studyProgram: studyProgram,
+          campusInterest: campusInterest,
           studyStartDate: studyStartDate,
           intake: intake,
+          campusInterestStart: campusInterestStart,
           studySite: locationSite,
           duration: studyDuration,
           monthlyFee: finalPrice,
@@ -1952,6 +1995,11 @@ function findOutAndChange(x, y) {
     for (let i = 0; i < D2.length; i++) {
       D2[i].innerHTML = D1.value;
     }
+  } else if (y === "yescampus") {
+    $("#studyOnSiteStart").removeClass("hide");
+  } else if (y === "nocampus") {
+    $("#onSiteStartDate")[0].selectedIndex = 0
+    $("#studyOnSiteStart").addClass("hide");
   } else if (x === "winterintake" || x === "winterintake2") {
     //intakes here
     document.getElementsByClassName("intake")[0].value = "70";
@@ -2075,6 +2123,7 @@ function checkLocation() {
 
     setTimeout(function () {
       $("#rowLocOne").removeClass("hide");
+      $('#campusInterest').removeClass("hide");
       $("#rowLocTwo").addClass("hide");
       $("#rowLocThree").addClass("hide");
       $("#rowLocFour").addClass("hide");
@@ -2148,6 +2197,7 @@ function checkLocation() {
     // $( "#semesterVariable" ).addClass( "hide" )
     // $( "#semesterVariable2" ).addClass( "hide" )
     $("#rowLocOne").addClass("hide");
+    $("#campusInterest").addClass("hide")
     $("#rowLocTwo").removeClass("hide");
     $("#rowLocThree").removeClass("hide");
     $("#rowLocFour").removeClass("hide");
@@ -2884,6 +2934,7 @@ function PriceChange() {
 document.getElementById("Degree").addEventListener("change", function () {
   if ($("#Degree :selected").text().includes("Master")) {
     $("#rowLocOne").removeClass("hide");
+    $('#campusInterest').removeClass("hide");
     $("#rowLocTwo").addClass("hide");
     $("#rowLocThree").addClass("hide");
     $("#rowLocFour").addClass("hide");
@@ -2894,6 +2945,7 @@ document.getElementById("Degree").addEventListener("change", function () {
         $( "#rowLocFour" ).removeClass( "hide" )*/
     //ONLINE ONLY
     $("#rowLocOne").removeClass("hide");
+    $('#campusInterest').removeClass("hide");
     $("#rowLocTwo").addClass("hide");
     $("#rowLocThree").addClass("hide");
     $("#rowLocFour").addClass("hide");
@@ -3510,6 +3562,7 @@ $("input[name='studyLocation']").change(function () {
 
 $("#studyOnCampus").click(function () {
   setTimeout(function () {
+    $("#campusInterest").addClass("hide")
     $("#monthsone").trigger("click");
     $("#intakes div.col-md-6").each(function (index) {
       if (!$(this).hasClass("hide")) {
@@ -3526,6 +3579,7 @@ $("#studyOnCampus").click(function () {
 
 //added new
 $("#studyOnline").click(function () {
+  $("#campusInterest").removeClass("hide")
   setTimeout(function () {
     $("#monthsone").trigger("click");
   }, 100);

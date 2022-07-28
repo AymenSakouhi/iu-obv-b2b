@@ -539,6 +539,30 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal" id="onsiteModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Oops something went wrong!!!</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Please answer our campus studies related question before you submit the application. Thank you very much
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <div class="modal" id="myModalgender">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -791,19 +815,29 @@
                                 </select>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-12" translate="no">
                             <div class="form-group">
                                 <label for="voucher">Partner Voucher <span class="required-mark">*</span></label>
                                 <input type="text" name="" value="" id="voucher" placeholder="PARTNER VOUCHER CODE" required>
                             </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12" translate="no">
                             <div class="form-group">
                                 <label for="agentEmail">Partner Email <span class="required-mark">*</span></label>
                                 <input class="space" type="text" name="" value="" id="agentEmail" placeholder="Partner Email">
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12" translate="no">
                             <div class="form-group">
                                 <label for="agentFirstName">Partner First Name <span class="required-mark">*</span></label>
                                 <input class="space" type="text" name="" value="" id="agentFirstName" placeholder="Partner First Name">
                             </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12" translate="no">
                             <div class="form-group">
                                 <label for="agentLastName">Partner Last Name <span class="required-mark">*</span></label>
                                 <input class="space" type="text" name="" value="" id="agentLastName" placeholder="Partner Last Name">
@@ -1163,6 +1197,49 @@
                                                 Bad Honnef</h5></label>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formblock hide" id="campusInterest">
+                    <div class="row" style="align-items: baseline">
+                        <div class="col-md-6 col-sm-6 col-xs-12" translate="no">
+                            <div class="form-group">
+                                <label class="text-transform-none" >Would you like to do a part of your studies on campus?*</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="form-group">
+                                <div class="radiobtn">
+                                    <input type="radio" id="yescampus" name="studyOnSite" value="yes" onclick="findOutAndChange(this.id,'yescampus')" />
+                                    <label for="yescampus" class="pl-0"><h5 class="text-center">Yes</h5></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="form-group">
+                                <div class="radiobtn">
+                                    <input type="radio" id="nocampus" name="studyOnSite" value="no" onclick="findOutAndChange(this.id,'nocampus')" />
+                                    <label for="nocampus" class="pl-0"><h5 class="text-center">No</h5></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="studyOnSiteStart" class="row hide">
+                        <div class="col-md-6 col-sm-6 col-xs-12" translate="no">
+                            <div style="display: block;"></div>
+                                <span>When would you like to start on campus?</span>
+                                <div class="form-group">
+                                    <select id="onSiteStartDate" onchange="" required>
+                                        <option value="" disabled selected>Choose one</option>
+                                        <option value="2022-10-01">October 2022</option>
+                                        <option value="2023-01-01">January 2023</option>
+                                        <option value="2023-04-01">April 2023</option>
+                                        <option value="2023-07-01">July 2023</option>
+                                        <option value="2023-10-01">October 2023</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
