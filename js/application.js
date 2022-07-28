@@ -1513,6 +1513,28 @@ function validatefilledIn() {
       .addClass("field-valid");
   }
 
+  if( $('input[name="studyLocation"]:checked').val() === "Online" &&
+      (
+        $("input[name=studyOnSite]:checked").length === 0 || 
+        ($("input[name=studyOnSite]:checked").val() === 'yes' && $("#onSiteStartDate")[0].selectedIndex === 0)
+      ) 
+    ){
+    const onSiteArr =  $("[name='studyOnSite']");
+    for (const [key, value] of Object.entries(onSiteArr)) {
+      $('label[for="' + value.id + '"]').css("border-color", "red");
+    }
+   $("#onSiteStartDate").css("border-color", "red")
+      .addClass("field-error")
+      .removeClass("field-valid");
+  } else {
+    const onSiteArr =  $("[name='studyOnSite']");
+    for (const [key, value] of Object.entries(onSiteArr)) {
+      $('label[for="' + value.id + '"]').css("border-color", "green");
+    }
+    $("#onSiteStartDate").css("border-color", "green")
+      .removeClass("field-error")
+      .addClass("field-valid");
+  }
   //document.getElementsByClassName('study-model')[0].value
 }
 
@@ -1569,6 +1591,16 @@ function checkingFields() {
     $("#myModalSite").modal();
     document.getElementById("submit").disabled = false;
     return false;
+  } else if(
+      $('input[name="studyLocation"]:checked').val() === "Online" &&
+      (
+        $("input[name=studyOnSite]:checked").length === 0 || 
+        ($("input[name=studyOnSite]:checked").val() === 'yes' && $("#onSiteStartDate")[0].selectedIndex === 0) 
+      )
+    ) {
+      validatefilledIn();
+      $("#onsiteModal").modal();
+      document.getElementById("submit").disabled = false;
   } else if ($("input[name=gender]:checked").length === 0) {
     validatefilledIn();
     $("#myModalgender").modal();
@@ -1637,6 +1669,25 @@ function activate() {
     //let englishLevel = document.getElementsByClassName('EnglishLevelSummary')[0].value;
     //let budgetPerMonth = document.getElementsByClassName('budgetSummary')[0].value;
     let campsite = document.getElementsByClassName("campusSite")[0].value;
+    
+    let campusInterest = null;
+    let intake = null;
+    if (document.getElementsByClassName("intake")[0].value !== "") {
+      //studyStartDate = null;
+      for (let i = 0; i < mT.length; i++) {
+        if (mT[i].name === $("#studyProgram :selected").text()) {
+          intake = document.getElementsByClassName("intake")[0].value;
+        }
+      }
+    }
+
+    let campusInterestStart = null;
+    if(businessUnit === "fi") {
+      campusInterest = $("input[name='studyOnSite']:checked").val();
+      if(campusInterest === "yes") {
+        campusInterestStart = document.getElementById("onSiteStartDate").value;
+      }
+    }
 
     /*let workExperience = 10;
     if (document.getElementsByClassName('workExperienceSummary')[0].value !== "") {
@@ -1669,15 +1720,6 @@ function activate() {
       //}
     }
 
-    let intake = null;
-    if (document.getElementsByClassName("intake")[0].value !== "") {
-      //studyStartDate = null;
-      for (let i = 0; i < mT.length; i++) {
-        if (mT[i].name === $("#studyProgram :selected").text()) {
-          intake = document.getElementsByClassName("intake")[0].value;
-        }
-      }
-    }
     let studyDuration = document.getElementsByClassName("study-model")[0].value;
 
     //let eSignature = document.getElementById('eSignature').checked
@@ -1710,6 +1752,7 @@ function activate() {
       mobileNumber: fullNumber,
       email: email,
       studyProgram: studyProgram,
+      campusInterest: campusInterest,
       studyStartDate: studyStartDate,
       englishLevel: "10",
       workExperience: 10,
@@ -1721,6 +1764,7 @@ function activate() {
       studyDuration: studyDuration,
       locationSite: locationSite,
       intake: intake,
+      campusInterestStart: campusInterestStart,
       voucher: voucherVar,
       agentEmail : agentEmail,
       agentFirstName : agentFirstName,
@@ -1772,8 +1816,10 @@ function activate() {
           city: city,
           country: country,
           studyProgram: studyProgram,
+          campusInterest: campusInterest,
           studyStartDate: studyStartDate,
           intake: intake,
+          campusInterestStart: campusInterestStart,
           studySite: locationSite,
           duration: studyDuration,
           monthlyFee: finalPrice,
@@ -1952,6 +1998,11 @@ function findOutAndChange(x, y) {
     for (let i = 0; i < D2.length; i++) {
       D2[i].innerHTML = D1.value;
     }
+  } else if (y === "yescampus") {
+    $("#studyOnSiteStart").removeClass("hide");
+  } else if (y === "nocampus") {
+    $("#onSiteStartDate")[0].selectedIndex = 0
+    $("#studyOnSiteStart").addClass("hide");
   } else if (x === "winterintake" || x === "winterintake2") {
     //intakes here
     document.getElementsByClassName("intake")[0].value = "70";
@@ -2075,6 +2126,7 @@ function checkLocation() {
 
     setTimeout(function () {
       $("#rowLocOne").removeClass("hide");
+      $('#campusInterest').removeClass("hide");
       $("#rowLocTwo").addClass("hide");
       $("#rowLocThree").addClass("hide");
       $("#rowLocFour").addClass("hide");
@@ -2148,6 +2200,7 @@ function checkLocation() {
     // $( "#semesterVariable" ).addClass( "hide" )
     // $( "#semesterVariable2" ).addClass( "hide" )
     $("#rowLocOne").addClass("hide");
+    $("#campusInterest").addClass("hide")
     $("#rowLocTwo").removeClass("hide");
     $("#rowLocThree").removeClass("hide");
     $("#rowLocFour").removeClass("hide");
@@ -2884,6 +2937,7 @@ function PriceChange() {
 document.getElementById("Degree").addEventListener("change", function () {
   if ($("#Degree :selected").text().includes("Master")) {
     $("#rowLocOne").removeClass("hide");
+    $('#campusInterest').removeClass("hide");
     $("#rowLocTwo").addClass("hide");
     $("#rowLocThree").addClass("hide");
     $("#rowLocFour").addClass("hide");
@@ -2894,6 +2948,7 @@ document.getElementById("Degree").addEventListener("change", function () {
         $( "#rowLocFour" ).removeClass( "hide" )*/
     //ONLINE ONLY
     $("#rowLocOne").removeClass("hide");
+    $('#campusInterest').removeClass("hide");
     $("#rowLocTwo").addClass("hide");
     $("#rowLocThree").addClass("hide");
     $("#rowLocFour").addClass("hide");
@@ -3510,6 +3565,7 @@ $("input[name='studyLocation']").change(function () {
 
 $("#studyOnCampus").click(function () {
   setTimeout(function () {
+    $("#campusInterest").addClass("hide")
     $("#monthsone").trigger("click");
     $("#intakes div.col-md-6").each(function (index) {
       if (!$(this).hasClass("hide")) {
@@ -3526,6 +3582,7 @@ $("#studyOnCampus").click(function () {
 
 //added new
 $("#studyOnline").click(function () {
+  $("#campusInterest").removeClass("hide")
   setTimeout(function () {
     $("#monthsone").trigger("click");
   }, 100);
