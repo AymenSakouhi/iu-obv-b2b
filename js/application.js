@@ -1652,20 +1652,20 @@ function activate() {
     
     let campusInterest = null;
     let intake = null;
-
-    if(businessUnit === "cs") {
-      if (document.getElementsByClassName("intake")[0].value !== "") {
-        //studyStartDate = null;
-        for (let i = 0; i < mT.length; i++) {
-          if (mT[i].name === $("#studyProgram :selected").text()) {
-            intake = document.getElementsByClassName("intake")[0].value;
-          }
+    if (document.getElementsByClassName("intake")[0].value !== "") {
+      //studyStartDate = null;
+      for (let i = 0; i < mT.length; i++) {
+        if (mT[i].name === $("#studyProgram :selected").text()) {
+          intake = document.getElementsByClassName("intake")[0].value;
         }
       }
-    } else {
+    }
+
+    let campusInterestStart = null;
+    if(businessUnit === "fi") {
       campusInterest = $("input[name='studyOnSite']:checked").val();
       if(campusInterest === "yes") {
-        intake = document.getElementById("onSiteStartDate").value;
+        campusInterestStart = document.getElementById("onSiteStartDate").value;
       }
     }
 
@@ -1752,6 +1752,7 @@ function activate() {
       studyDuration: studyDuration,
       locationSite: locationSite,
       intake: intake,
+      campusInterestStart: campusInterestStart,
       voucher: voucherVar,
       agentEmail : agentEmail,
       agentFirstName : agentFirstName,
@@ -1806,6 +1807,7 @@ function activate() {
           campusInterest: campusInterest,
           studyStartDate: studyStartDate,
           intake: intake,
+          campusInterestStart: campusInterestStart,
           studySite: locationSite,
           duration: studyDuration,
           monthlyFee: finalPrice,
