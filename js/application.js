@@ -1214,6 +1214,30 @@ let mT = [
     careId: "10007958_FI_L",
   },
   {
+    name: "M.A. Management - Specialisation Engineering Management - 60",
+    careId: "10007958_FI_EM",
+    careIdCs: "10008377_EM",
+    intake: "Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+  },
+  {
+    name: "M.A. Management - Specialisation Big Data Management - 60",
+    careId: "10007958_FI_BDM",
+    careIdCs: "10008377_BDM",
+    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+  },
+  {
+    name: "M.A. Management - Specialisation IT Management - 60",
+    careId: "10007958_FI_ITM",
+    careIdCs: "10008377_ITM",
+    intake: "Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+  },
+  {
+    name: "M.A. Management - Specialisation International Marketing - 60",
+    careId: "10007958_FI_IM",
+    careIdCs: "10008377_IM",
+    intake: "Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23"
+  },
+  {
     name: "M.A. International Healthcare Management - 60",
     careId: "10008178_FI_HCM",
   },
@@ -1232,33 +1256,6 @@ let mT = [
   {
     name: "M.A. Innovation & Entrepreneurship - 120",
     careId: "10008132_FI_IE",
-  },
-  {
-    name: "M.A. Management - Specialisation Engineering Management - 60",
-    careId: "10007958_FI_EM",
-    careIdCs: "10008377_EM",
-    intake: "Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
-  },
-  {
-    name: "M.A. Management - Specialisation Big Data Management - 60",
-    careId: "10007958_FI_BDM",
-    careIdCs: "10008377_BDM",
-    intake: "Jan 22, Apr 22, Jul 22, Oct 22",
-    intake2: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
-  },
-  {
-    name: "M.A. Management - Specialisation IT Management - 60",
-    careId: "10007958_FI_ITM",
-    careIdCs: "10008377_ITM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-    intake2: "Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
-  },
-  {
-    name: "M.A. Management - Specialisation International Marketing - 60",
-    careId: "10007958_FI_IM",
-    careIdCs: "10008377_IM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-    intake2: "Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.A. Marketing Management - 60",
@@ -1328,7 +1325,7 @@ let mT = [
     name: "M.A. International Management - Specialisation IT Management - 120",
     careId: "10008045_FI_ITM",
     careIdCs: "10008375_ITM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    intake: "Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.A. International Management - Specialisation International Marketing - 120",
