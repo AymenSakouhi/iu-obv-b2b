@@ -961,7 +961,7 @@ let mT = [
     name: "M.Sc. Artificial Intelligence - 120",
     careId: "10007857",
     careIdCs: "10008529_CS_AI",
-    intake: "Oct 22, Apr 23, Oct 23",
+    intake: "Apr 23, Oct 23",
     studyLocation: "OnlyBerlin",
   },
   {
@@ -983,14 +983,14 @@ let mT = [
     name: "M.Sc. Data Science - 120",
     careId: "10007854",
     careIdCs: "10008537_CS_DS",
-    intake: "Oct 22, Oct 23",
+    intake: "Oct 23",
     studyLocation: "OnlyBerlin",
   },
   {
     name: "M.Sc. Cyber Security - 120",
     careId: "10008014_FI",
     careIdCs: "10008533_CS",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+    intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     studyLocation: "OnlyBerlin"
   },
   {
@@ -1109,7 +1109,7 @@ let mT = [
     name: "B.A. Entrepreneurship - 180",
     careId: "10008062_FI",
     careIdCs: "10008526_CS_ENT",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+    intake: "Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "B.A. International Management - 180",
@@ -1121,19 +1121,19 @@ let mT = [
     name: "B.A. Aviation Management - 180",
     careId: "10008295_FI_AM",
     careIdCs: "10008472",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+    intake: "Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "B.A. Hospitality Management - 180",
     careId: "10008294_FI_HM",
     careIdCs: "10008477",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+    intake: "Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "B.Eng. Robotics - 180",
     careId: "10007964_FI",
     careIdCs: "10008527_CS_ROB",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23"
+    intake: "Jan 23, Apr 23, Jul 23, Oct 23"
   },
   /*{
         "name" : 'B.Eng. Engineering - 180',
@@ -1177,7 +1177,7 @@ let mT = [
     name: "B.Sc. Data Science - 180",
     careId: "10007851",
     careIdCs: "10008525_CS_DS",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+    intake: "Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "B.Sc. Business & IT - 180",
@@ -1195,7 +1195,7 @@ let mT = [
     name: "B.Sc. Software Development - 180",
     careId: "10008074_FI_SD",
     careIdCs: "10008528_CS_SD",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+    intake: "Jan 23, Apr 23, Jul 23, Oct 23",
   },
   {
     name: "M.A. Management - 60",
@@ -1268,7 +1268,7 @@ let mT = [
     name: "M.A. Marketing Management - 120",
     careId: "10007976_FI",
     careIdCs: "10008539_CS_MM",
-    intake: "Oct 22, Jan 23, Apr 23",
+    intake: "Jan 23, Apr 23, Oct 23",
     studyLocation: "OnlyBerlin",
   },
   {
